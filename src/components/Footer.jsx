@@ -1,6 +1,7 @@
 import React from "react";
 import { Mail, Linkedin, Github, Star } from "lucide-react";
 import Reveal from "./Reveal";
+import { Link } from "react-router-dom";
 import PeacockLogo from "../assets/peacock.png";
 
 export default function Footer() {
@@ -53,11 +54,18 @@ export default function Footer() {
             <div className="animate-fade-up delay-200">
               <h3 className="mb-3 font-semibold text-white">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                {["Home","About","Research","Projects","Experience","Contact"].map((l, i) => (
-                  <li key={l} className={`animate-fade-up delay-${200 + i * 80}`}>
-                    <a href={`/${l.toLowerCase()==="home" ? "" : l.toLowerCase()}`} className="transition-colors hover:text-rose-300">
-                      {l}
-                    </a>
+                {[
+                  { label: "Home", to: "/" },
+                  { label: "About", to: "/about" },
+                  { label: "Research", to: "/research" },
+                  { label: "Projects", to: "/projects" },
+                  { label: "Experience", to: "/experience" },
+                  { label: "Contact", to: "/contact" },
+                ].map((item, i) => (
+                  <li key={item.to} className={`animate-fade-up delay-[${200 + i * 80}ms]`}>
+                    <Link to={item.to} className="transition-colors hover:text-rose-300">
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
