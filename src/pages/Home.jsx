@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star } from "lucide-react";
 import Reveal from "../components/Reveal";
-import profile from "../assets/Kaaviyashri.jpg"; // ensure this file exists
+import profile from "../assets/Kaaviyashri.jpg";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
             <div className="space-y-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600">
                 <Star className="h-3.5 w-3.5 text-rose-400" />
-                Graduate Student | AI Enthusiast | Software Engineer
+                Graduate Student - Software Engineer
               </span>
 
               <h1 className="text-4xl font-bold text-gray-900">
@@ -22,7 +22,10 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-gray-700">
-                Graduate student and AI enthusiast exploring computer vision and machine learning, with a focus on building systems that create real-world impact.
+                 Graduate student in Software Engineering and an AI enthusiast,
+                  exploring machine learning, deep learning, and{" "}
+                  computer vision. Focused on building skills and projects that
+                  strengthen my research foundation and technical expertise.
               </p>
 
               <div className="flex flex-wrap gap-3">

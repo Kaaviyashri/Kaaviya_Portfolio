@@ -71,11 +71,10 @@ export default function About() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
-                    href={resumeUrl}
+                    href="/KaaviyaSaraboji-Resume.pdf"   // <-- exact name, from /public
                     download
-                    className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 transition hover:border-rose-300 hover:text-rose-700"
+                    className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-rose-300 hover:text-rose-700"
                   >
-                    <Download className="h-4 w-4" />
                     Download CV
                   </a>
                 </div>
