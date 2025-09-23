@@ -68,16 +68,6 @@ export default function About() {
                   deployment, and building maintainable web apps. I thrive in teams that value{" "}
                   clarity, empathy, and iteration.
                 </p>
-
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a
-                    href="/KaaviyaSaraboji-Resume.pdf"   // <-- exact name, from /public
-                    download
-                    className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-rose-300 hover:text-rose-700"
-                  >
-                    Download CV
-                  </a>
-                </div>
               </div>
             </Reveal>
 
