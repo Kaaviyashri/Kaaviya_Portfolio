@@ -35,7 +35,7 @@ export default function Research() {
 
           <Reveal className="animate-fade-up delay-100">
             <h1 className="text-4xl font-bold text-gray-900">
-              Building AI with Real-World Impact
+              Exploring AI
             </h1>
           </Reveal>
 
@@ -45,9 +45,8 @@ export default function Research() {
               machine learning,{" "}
               deep learning,{" "}
               computer vision, and{" "}
-              AI applications in healthcare and ethics of AI - with a focus
-              on systems that move beyond labs and create measurable benefit for
-              people, wildlife, and communities.
+              AI applications in healthcare and ethics of AI. My current focus is on developing projects and research skills that prepare
+              me for impactful, real-world applications in the future.
             </p>
           </Reveal>
         </div>
