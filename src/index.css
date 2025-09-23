@@ -1,0 +1,82 @@
+/* Tailwind v4 entry */
+@import "tailwindcss";
+
+/* Base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f8fafc;        /* gray-50 */
+  color: #0f172a;              /* slate-900 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fade-in {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-12px); opacity: 0 }
+  to   { transform: translateY(0); opacity: 1 }
+}
+
+@keyframes scale-in {
+  from { transform: scale(.96); opacity: 0 }
+  to   { transform: scale(1); opacity: 1 }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0) }
+  50%      { transform: translateY(-6px) }
+}
+
+@keyframes shimmer {
+  from { background-position: 0% 50% }
+  to   { background-position: 100% 50% }
+}
+
+/* ---------- Helpers ---------- */
+/* use as className="animate-fade-up" etc. */
+.animate-fade-in   { animation: fade-in .6s ease-out both }
+.animate-fade-up   { animation: fade-up .7s ease-out both }
+.animate-slide-down{ animation: slide-down .5s ease-out both }
+.animate-scale-in  { animation: scale-in .5s ease-out both }
+.animate-float     { animation: float-y 5s ease-in-out infinite }
+
+/* stagger helpers (just add one of these in addition to an animation class) */
+.delay-0   { animation-delay: 0ms }
+.delay-100 { animation-delay: 100ms }
+.delay-200 { animation-delay: 200ms }
+.delay-300 { animation-delay: 300ms }
+.delay-400 { animation-delay: 400ms }
+.delay-500 { animation-delay: 500ms }
+
+/* reveal-on-scroll */
+.reveal   { opacity: 0; transform: translateY(14px) }
+.revealed { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease }
+
+/* pretty gradient borders */
+.border-gradient {
+  position: relative;
+  border-radius: 0.75rem; /* ~ rounded-xl */
+}
+.border-gradient::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(244,114,182,.6), rgba(244,114,182,0) 40%, rgba(203,213,225,.8));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
