@@ -272,32 +272,6 @@ export default function Research() {
           </div>
         </div>
       </section>
-
-      {/* ===== Future Directions / CTA ===== */}
-      <section className="px-6 py-16 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="mx-auto max-w-4xl space-y-6">
-          <Reveal className="animate-fade-up">
-            <h2 className="text-3xl font-bold text-white">Future Directions</h2>
-          </Reveal>
-          <Reveal className="animate-fade-up delay-100">
-            <p className="text-gray-200 text-lg">
-              
-              Moving toward real-world field pilots and community-centered applications of AI. 
-              I am actively learning and improving my research and technical skills, while 
-              remaining open to collaborations and PhD opportunities.
-            </p>
-          </Reveal>
-
-          <Reveal className="animate-fade-up delay-200">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-rose-400 px-5 py-3 font-medium text-white hover:bg-rose-300 transition"
-            >
-              Let’s Collaborate
-            </a>
-          </Reveal>
-        </div>
-      </section>
     </div>
   );
 }
