@@ -32,7 +32,7 @@ export default function Footer() {
                 </span>
               </div>
               <p className="text-sm text-gray-400">
-                Graduate Student | AI Enthusiast | Software Engineer
+                Graduate Student - Software Engineer
               </p>
               <div className="flex gap-3">
                 {socials.map((s, i) => (
@@ -81,9 +81,6 @@ export default function Footer() {
                 saraboji5411@uwlax.edu
               </a>
               <p className="text-gray-400">La Crosse, WI</p>
-              <p className="mt-2 text-gray-400">
-                Open to research collaborations, PhD programs & industry roles.
-              </p>
             </div>
           </div>
 

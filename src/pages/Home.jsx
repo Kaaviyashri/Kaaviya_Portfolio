@@ -86,7 +86,7 @@ export default function Home() {
             <div className="mb-12">
               <h2 className="mb-4 text-3xl font-bold text-gray-900">Awards & Honors</h2>
               <p className="max-w-2xl text-lg text-gray-600">
-                Recognition for research impact, community service, and academic merit.
+                Recognition for academic merit and community service.
               </p>
             </div>
           </Reveal> 

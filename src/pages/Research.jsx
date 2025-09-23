@@ -61,8 +61,7 @@ export default function Research() {
                 Featured Project
               </h2>
               <p className="text-gray-600 max-w-2xl">
-                Ongoing, applied research with a clear path to real-world
-                deployment.
+                Ongoing applied research.
               </p>
             </div>
           </Reveal>
@@ -136,7 +135,7 @@ export default function Research() {
             <Reveal className="lg:col-span-2 bg-gradient-to-br from-gray-50 to-rose-50 p-8 space-y-6 animate-fade-up delay-100">
               <h4 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
                 <FlaskConical className="h-5 w-5 text-rose-500" />
-                Approach (Snapshot)
+                Approach
               </h4>
 
               <ul className="space-y-3 text-sm text-gray-700">
@@ -153,12 +152,6 @@ export default function Research() {
                   </li>
                 ))}
               </ul>
-
-              <div className="rounded-xl border border-gray-200 bg-white p-4">
-                <p className="text-sm text-gray-700">
-                  Status: dataset curation & baseline metrics.
-                </p>
-              </div>
             </Reveal>
           </div>
         </div>
@@ -173,8 +166,7 @@ export default function Research() {
                 Research Interests
               </h2>
               <p className="text-gray-600 max-w-2xl">
-                Areas I’m exploring across AI, software engineering, and
-                human-centered impact.
+                Areas I’m exploring across AI and software engineering
               </p>
             </div>
           </Reveal>
@@ -229,9 +221,6 @@ export default function Research() {
               <h2 className="mb-4 text-3xl font-bold text-gray-900">
                 Publications & Presentations
               </h2>
-              <p className="text-gray-600 max-w-2xl">
-                Selected scholarly output and talks. (More coming soon.)
-              </p>
             </div>
           </Reveal>
 
@@ -258,7 +247,7 @@ export default function Research() {
               <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition">
                 <div className="flex items-center gap-2 text-rose-600 font-medium">
                   <FileText className="h-4 w-4" />
-                  Manuscript (Planning)
+                  <p>Ongoing research</p>
                 </div>
                 <h3 className="mt-2 text-lg font-semibold text-gray-900">
                   Survey on AI Fairness in Applied Systems
