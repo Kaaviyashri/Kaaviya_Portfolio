@@ -1,7 +1,6 @@
 // src/pages/Experience.jsx
 import React from "react";
 import {
-  Code,
   GraduationCap,
   Users,
   Briefcase,
@@ -71,7 +70,8 @@ export default function Experience() {
                 course projects running smoothly.
               </li>
               <li>
-                • Encouraged good practices such as version control, readable code, and incremental testing.
+                • Encouraged good practices such as version control, readable code, and
+                incremental testing.
               </li>
             </ul>
           </article>
@@ -135,7 +135,7 @@ export default function Experience() {
                 </span>
               </div>
 
-              <h3 className="text-lg font-semibold text-slate-50">
+            <h3 className="text-lg font-semibold text-slate-50">
                 Frontend Developer Intern — 7Angle, Chennai, India
               </h3>
               <p className="text-xs text-slate-400">April 2024 – July 2024</p>
@@ -147,14 +147,14 @@ export default function Experience() {
                 </li>
                 <li>
                   • Integrated REST APIs for data retrieval and state management, ensuring
-                  smooth frontend–backend communication and error handling.
+                  smooth frontend–backend communication and robust error handling.
                 </li>
                 <li>
                   • Participated in Agile sprint planning, daily stand-ups, and code reviews,
-                  practicing collaborative Git workflows.
+                  practicing collaborative Git-based workflows.
                 </li>
                 <li>
-                  • Contributed to component libraries and reusable layout patterns to keep
+                  • Contributed to reusable components and layout patterns to keep
                   codebases maintainable and consistent.
                 </li>
               </ul>
@@ -181,16 +181,16 @@ export default function Experience() {
                   usage patterns, performance issues, and automation opportunities.
                 </li>
                 <li>
-                  • Designed and maintained dashboards that reduced manual reporting work
-                  by ~40% and gave teams real-time visibility into key digital channels.
+                  • Designed and maintained dashboards that reduced manual reporting
+                  workload by ~40% and provided real-time visibility into key digital channels.
                 </li>
                 <li>
                   • Supported implementation and testing of digital banking features,
-                  including mobile banking, authentication, and biometric services.
+                  including mobile banking and biometric authentication services.
                 </li>
                 <li>
                   • Collaborated with cross-functional teams (IT, operations, business)
-                  to translate requirements into testable, data-driven solutions.
+                  to translate domain requirements into testable, data-informed solutions.
                 </li>
               </ul>
             </article>
@@ -208,16 +208,27 @@ export default function Experience() {
         </Reveal>
 
         <Reveal className="grid gap-6 md:grid-cols-2">
-          {/* RA */}
+          {/* Resident Assistant */}
           <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-2">
             <h3 className="text-sm sm:text-base font-semibold text-slate-100">
               Resident Assistant — University of Wisconsin–La Crosse
             </h3>
             <p className="text-xs text-slate-400">August 2025 – Present</p>
-            <p className="text-xs text-slate-300">
-              Supporting residents through community-building, conflict mediation, and
-              referral to academic and wellness resources.
-            </p>
+            <ul className="mt-1.5 space-y-1 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Responsible for a community of approximately{" "}
+                <span className="text-slate-100 font-semibold">40 residents</span>,
+                supporting their academic, social, and personal transition to university life.
+              </li>
+              <li>
+                • Facilitating floor meetings, community-building events, and educational
+                programs focused on wellbeing, inclusion, and academic success.
+              </li>
+              <li>
+                • Assisting with conflict mediation, crisis response, and referral
+                to campus resources in collaboration with Residence Life staff.
+              </li>
+            </ul>
           </article>
 
           {/* ISO Senator */}
@@ -226,22 +237,64 @@ export default function Experience() {
               Senator — International Student Organization (ISO)
             </h3>
             <p className="text-xs text-slate-400">September 2025 – Present</p>
-            <p className="text-xs text-slate-300">
-              Representing international students in ISO, contributing to programming,
-              cultural events, and advocacy for international student needs.
-            </p>
+            <ul className="mt-1.5 space-y-1 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Representing international student perspectives in senate meetings and
+                initiatives, helping shape programming and advocacy priorities.
+              </li>
+              <li>
+                • Supporting cultural events, outreach, and community-building activities
+                for global student populations on campus.
+              </li>
+              <li>
+                • Collaborating with international education staff and student leaders to
+                improve the experience of international students at UWL.
+              </li>
+            </ul>
           </article>
 
-          {/* Legislative & Environmental Committee */}
+          {/* Legislative Affairs & Environmental Sustainability */}
           <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-2">
             <h3 className="text-sm sm:text-base font-semibold text-slate-100">
               Committee Member — Legislative Affairs & Environmental Sustainability
             </h3>
             <p className="text-xs text-slate-400">September 2025 – Present</p>
-            <p className="text-xs text-slate-300">
-              Participating in student-government committees focused on policy, advocacy,
-              and campus sustainability initiatives.
-            </p>
+            <ul className="mt-1.5 space-y-1 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Contributing to student government discussions on policy, advocacy, and
+                campus sustainability initiatives.
+              </li>
+              <li>
+                • Reviewing proposals, gathering student feedback, and helping communicate
+                committee priorities to the wider student body.
+              </li>
+              <li>
+                • Engaging with peers and campus partners to promote environmentally
+                responsible practices and student voice in governance.
+              </li>
+            </ul>
+          </article>
+
+          {/* Summer Conference Assistant */}
+          <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-2">
+            <h3 className="text-sm sm:text-base font-semibold text-slate-100">
+              Summer Conference Assistant — University of Wisconsin–La Crosse
+            </h3>
+            <p className="text-xs text-slate-400">Summer 2025</p>
+            <ul className="mt-1.5 space-y-1 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Oversaw front-desk operations for summer conference housing, supporting
+                visiting groups and program participants.
+              </li>
+              <li>
+                • Coordinated check-in/check-out, room allocations, and guest services in
+                collaboration with Residence Life and event management teams.
+              </li>
+              <li>
+                • Helped ensure a smooth on-site experience by responding to questions,
+                troubleshooting issues, and maintaining clear communication with guests.
+              </li>
+            </ul>
           </article>
         </Reveal>
       </section>
