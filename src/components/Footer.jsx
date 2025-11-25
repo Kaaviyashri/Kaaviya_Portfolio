@@ -37,16 +37,25 @@ export default function Footer() {
     <footer className="mt-16 border-t border-slate-800 bg-slate-950 text-slate-300">
       <div className="mx-auto max-w-6xl px-6 py-10">
         <Reveal className="space-y-8">
-          {/* Top grid */}
+          {/* Top Grid */}
           <div className="grid gap-8 md:grid-cols-3">
-            {/* Brand & socials */}
+            
+            {/* Brand + Socials */}
             <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <img
-                  src={PeacockLogo}
-                  alt="Peacock logo"
-                  className="h-9 w-9 rounded-xl object-contain"
-                />
+              <Link
+                to="/"
+                className="flex items-center gap-2 group"
+                aria-label="Go to homepage"
+              >
+                {/* MATCH header.jsx circular logo container */}
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 border border-slate-700 overflow-hidden">
+                  <img
+                    src={PeacockLogo}
+                    alt="Peacock logo"
+                    className="h-8 w-8 rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+                  />
+                </div>
+
                 <div>
                   <p className="text-sm font-semibold text-slate-50">
                     Kaaviyashri Saraboji
@@ -55,7 +64,7 @@ export default function Footer() {
                     Graduate student · Software Engineering · Applied AI
                   </p>
                 </div>
-              </div>
+              </Link>
 
               <p className="max-w-xs text-xs text-slate-400">
                 Building and studying software systems, machine learning models,
@@ -64,7 +73,7 @@ export default function Footer() {
               </p>
 
               <div className="flex gap-2 pt-1">
-                {socials.map((s, i) => (
+                {socials.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
@@ -79,7 +88,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Site navigation */}
+            {/* Navigation */}
             <div className="text-sm">
               <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
                 Navigation
@@ -98,7 +107,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Contact & location */}
+            {/* Contact */}
             <div className="text-sm">
               <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
                 Contact
@@ -135,12 +144,14 @@ export default function Footer() {
                     github.com/Kaaviyashri
                   </a>
                 </p>
-                <p className="pt-1 text-slate-400">Based in La Crosse, WI, USA.</p>
+                <p className="pt-1 text-slate-400">
+                  Based in La Crosse, WI, USA.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Bottom bar */}
+          {/* Bottom Bar */}
           <div className="border-t border-slate-800 pt-4 flex flex-col items-center justify-between gap-2 text-[11px] text-slate-500 sm:flex-row">
             <span>© {year} Kaaviyashri Saraboji. All rights reserved.</span>
             <span>Built with React &amp; Tailwind CSS.</span>
