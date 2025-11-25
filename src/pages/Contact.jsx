@@ -1,256 +1,251 @@
 import React, { useState } from "react";
 import { Mail, Linkedin, Github, Send, X } from "lucide-react";
+import Reveal from "../components/Reveal.jsx";
+import { personalInfo } from "../data/personal.js";
 
-// Contact details
 const CONTACT = {
-  email: "saraboji5411@uwlax.edu",
-  linkedin: "https://www.linkedin.com/in/kaaviyashri-saraboji-6ba1871ba",
-  github: "https://github.com/Kaaviyashri",
+  email: personalInfo.email,
+  linkedin: personalInfo.linkedin,
+  github: personalInfo.github,
 };
 
-// Simple wrapper for fade-up animation
-const Reveal = ({ children, className }) => <div className={className}>{children}</div>;
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [sending, setSending] = useState(false);
-  const [message, setMessage] = useState(null);
+  const [banner, setBanner] = useState(null);
 
-  function update(e) {
+  function handleChange(e) {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!form.name || !form.email || !form.subject || !form.message) {
-      setMessage({ type: "error", text: "Please fill in all required fields." });
+      setBanner({
+        type: "error",
+        text: "Please fill in all required fields.",
+      });
       return;
     }
     setSending(true);
-    setMessage(null);
+    setBanner(null);
 
     const to = CONTACT.email;
     const subj = encodeURIComponent(form.subject);
     const body = encodeURIComponent(
-      `Hi Kaaviyashri,\n\n${form.message}\n\n— ${form.name}\n${form.email}`
+      `Hi,\n\n${form.message}\n\n— ${form.name}\n${form.email}`
     );
     const href = `mailto:${to}?subject=${subj}&body=${body}`;
 
     setTimeout(() => {
       window.location.href = href;
       setSending(false);
-      setMessage({ type: "success", text: "Message ready! Your email client is opening now." });
+      setBanner({
+        type: "success",
+        text: "Your default email app should open with the message.",
+      });
     }, 300);
   }
 
-  // Contact methods
-  const methods = [
+  const cards = [
     {
       icon: Mail,
       title: "Email",
       value: CONTACT.email,
       href: `mailto:${CONTACT.email}`,
+      desc: "Best way to get in touch.",
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "Connect on LinkedIn",
+      value: "View profile",
       href: CONTACT.linkedin,
+      desc: "Updates, connections, and ongoing work.",
     },
     {
       icon: Github,
       title: "GitHub",
-      value: "See my code",
+      value: "Browse repositories",
       href: CONTACT.github,
+      desc: "Code for selected projects and experiments.",
     },
   ];
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50 text-gray-900">
+    <div className="mx-auto max-w-6xl space-y-12">
       {/* Hero */}
-      <section className="border-b border-gray-200 py-16 px-6 bg-gradient-to-b from-gray-50 to-white">
-        <div className="mx-auto max-w-6xl">
-          <Reveal className="animate-fade-up delay-100">
-            <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600">
-              <Send className="h-4 w-4 text-rose-400" />
-              Get in Touch
-            </span>
-            <h1 className="mt-6 text-4xl md:text-5xl font-extrabold text-gray-900">Contact</h1>
-            <p className="mt-3 text-lg text-gray-700">
-              Learning and applying AI/ML, data science, and{" "}
-              full-stack development to strengthen my research and engineering foundation.
-            </p>
-          </Reveal>
+      <section className="pt-4 sm:pt-6 space-y-4">
+        <Reveal>
+          <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-3 py-1 text-[11px] font-medium text-slate-300">
+            <Send className="h-3.5 w-3.5 text-rose-300" />
+            Contact
+          </span>
+        </Reveal>
+        <Reveal>
+          <h1 className="text-3xl sm:text-4xl font-semibold text-slate-50">
+            Let’s connect
+          </h1>
+        </Reveal>
+        <Reveal>
+          <p className="max-w-3xl text-sm sm:text-base text-slate-200/90">
+            Feel free to reach out about projects, collaborations, or to ask
+            questions about any of the work in this portfolio.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* Contact methods */}
+      <section className="space-y-6">
+        <Reveal>
+          <h2 className="text-sm font-semibold text-slate-100">
+            Ways to reach me
+          </h2>
+        </Reveal>
+        <div className="grid gap-6 md:grid-cols-3">
+          {cards.map((c) => (
+            <Reveal
+              key={c.title}
+              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 shadow-[0_16px_50px_rgba(0,0,0,0.85)]"
+            >
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 border border-slate-700">
+                <c.icon className="h-5 w-5 text-rose-300" />
+              </div>
+              <p className="text-sm font-semibold text-slate-50">
+                {c.title}
+              </p>
+              <a
+                href={c.href}
+                target={c.title === "Email" ? undefined : "_blank"}
+                rel={c.title === "Email" ? undefined : "noreferrer"}
+                className="mt-1 block text-xs font-medium text-rose-200 hover:text-rose-100"
+              >
+                {c.value}
+              </a>
+              <p className="mt-1 text-xs text-slate-300">{c.desc}</p>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      {/* Methods */}
-      <section className="bg-white px-6">
-        <div className="mx-auto max-w-6xl py-12">
-          <Reveal className="animate-fade-up">
-            <h2 className="text-2xl font-semibold text-gray-900">Contact Methods</h2>
-          </Reveal>
+      {/* Simple form -> mailto */}
+      <section className="pb-4 sm:pb-6">
+        <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/70 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.85)] space-y-4">
+          <h2 className="text-sm font-semibold text-slate-100">
+            Send a message
+          </h2>
 
-          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {methods.map((m, i) => (
-              <Reveal key={m.title} className={`animate-fade-up delay-${i * 100}`}>
-                <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                  <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100">
-                    <m.icon className="h-6 w-6 text-rose-600" />
-                  </div>
-                  <h3 className="text-base font-semibold text-gray-900">{m.title}</h3>
-                  {m.href ? (
-                    <a
-                      href={m.href}
-                      target={m.title !== "Email" ? "_blank" : undefined}
-                      rel={m.title !== "Email" ? "noreferrer" : undefined}
-                      className="mt-1 block text-sm font-medium text-rose-700 hover:underline"
-                    >
-                      {m.value}
-                    </a>
-                  ) : (
-                    <p className="mt-1 text-sm font-medium text-gray-700">{m.value}</p>
-                  )}
-                  <p className="mt-1 text-sm text-gray-600">{m.desc}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Form */}
-      <section className="bg-gray-50 px-6">
-        <div className="mx-auto max-w-6xl py-14">
-          <Reveal className="animate-fade-up">
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-semibold text-gray-900">Send a Message</h2>
-              <p className="mt-2 text-gray-600">I usually respond within 24 hours.</p>
-
-              {/* Inline message (success/error) */}
-              {message && (
-                <div
-                  className={`mt-4 flex items-center gap-2 rounded-lg p-3 text-sm ${
-                    message.type === "error" ? "bg-red-50 text-red-700" : "bg-green-50 text-green-700"
-                  }`}
-                >
-                  <p>{message.text}</p>
-                  <button
-                    onClick={() => setMessage(null)}
-                    className="ml-auto p-1 rounded-full hover:bg-black/5 transition"
-                    aria-label="Dismiss message"
-                  >
-                    <X size={16} />
-                  </button>
-                </div>
-              )}
-
-              <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <Reveal className="animate-fade-up delay-100">
-                    <div>
-                      <label htmlFor="name" className="text-sm font-medium text-gray-900">
-                        Full Name *
-                      </label>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={form.name}
-                        onChange={update}
-                        placeholder="Your name"
-                        className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-200 transition-all duration-300 hover:border-gray-400"
-                      />
-                    </div>
-                  </Reveal>
-
-                  <Reveal className="animate-fade-up delay-150">
-                    <div>
-                      <label htmlFor="email" className="text-sm font-medium text-gray-900">
-                        Email *
-                      </label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={form.email}
-                        onChange={update}
-                        placeholder="you@example.com"
-                        className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-200 transition-all duration-300 hover:border-gray-400"
-                      />
-                    </div>
-                  </Reveal>
-                </div>
-
-                <Reveal className="animate-fade-up delay-200">
-                  <div>
-                    <label htmlFor="subject" className="text-sm font-medium text-gray-900">
-                      Subject *
-                    </label>
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required
-                      value={form.subject}
-                      onChange={update}
-                      placeholder="What would you like to discuss?"
-                      className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-200 transition-all duration-300 hover:border-gray-400"
-                    />
-                  </div>
-                </Reveal>
-
-                <Reveal className="animate-fade-up delay-250">
-                  <div>
-                    <label htmlFor="message" className="text-sm font-medium text-gray-900">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={6}
-                      value={form.message}
-                      onChange={update}
-                      placeholder="Message"
-                      className="mt-1 w-full resize-y rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-200 transition-all duration-300 hover:border-gray-400"
-                    />
-                  </div>
-                </Reveal>
-
-                <Reveal className="animate-fade-up delay-300">
-                  <button
-                    type="submit"
-                    disabled={sending}
-                    className={`inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-all duration-300 ${
-                      sending ? "bg-rose-400" : "bg-rose-600 hover:bg-rose-700"
-                    } focus:outline-none focus:ring-2 focus:ring-rose-300`}
-                  >
-                    <Send className="h-4 w-4" />
-                    {sending ? "Opening email…" : "Send Message"}
-                  </button>
-                </Reveal>
-              </form>
+          {banner && (
+            <div
+              className={`flex items-center gap-2 rounded-lg px-3 py-2 text-xs ${
+                banner.type === "error"
+                  ? "bg-red-900/40 text-red-200 border border-red-700"
+                  : "bg-emerald-900/30 text-emerald-200 border border-emerald-700"
+              }`}
+            >
+              <span>{banner.text}</span>
+              <button
+                onClick={() => setBanner(null)}
+                className="ml-auto rounded-full p-1 hover:bg-black/20"
+              >
+                <X className="h-3 w-3" />
+              </button>
             </div>
-          </Reveal>
-        </div>
-      </section>
+          )}
 
-      {/* Scoped keyframes */}
-      <style>{`
-        @keyframes fade-up {
-          from { opacity: 0; transform: translateY(6px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-up { animation-name: fade-up; animation-duration: 500ms; animation-fill-mode: both; animation-timing-function: ease; }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-150 { animation-delay: 150ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-250 { animation-delay: 250ms; }
-        .delay-300 { animation-delay: 300ms; }
-      `}</style>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-xs font-medium text-slate-200"
+                >
+                  Name *
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:border-rose-400 focus:outline-none focus:ring-1 focus:ring-rose-400"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-medium text-slate-200"
+                >
+                  Email *
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:border-rose-400 focus:outline-none focus:ring-1 focus:ring-rose-400"
+                  placeholder="you@example.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="subject"
+                className="block text-xs font-medium text-slate-200"
+              >
+                Subject *
+              </label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                required
+                value={form.subject}
+                onChange={handleChange}
+                className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:border-rose-400 focus:outline-none focus:ring-1 focus:ring-rose-400"
+                placeholder="What would you like to talk about?"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-xs font-medium text-slate-200"
+              >
+                Message *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={5}
+                value={form.message}
+                onChange={handleChange}
+                className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:border-rose-400 focus:outline-none focus:ring-1 focus:ring-rose-400"
+                placeholder="Write your message here."
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={sending}
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-cyan-400 px-5 py-2 text-xs font-semibold text-slate-950 shadow-[0_16px_40px_rgba(0,0,0,0.9)] hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              <Send className="h-4 w-4" />
+              {sending ? "Preparing email..." : "Open email app"}
+            </button>
+          </form>
+        </Reveal>
+      </section>
     </div>
   );
 }

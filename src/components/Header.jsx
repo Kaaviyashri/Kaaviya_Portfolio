@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Menu, X, Star } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import PeacockLogo from "../assets/peacock.png";
 
 export default function Header() {
@@ -8,12 +8,12 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const nav = [
+  const navItems = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/research", label: "Research" },
@@ -23,88 +23,92 @@ export default function Header() {
   ];
 
   const base =
-    "relative text-sm font-medium transition-colors duration-200";
-  const inactive = "text-gray-200/90 hover:text-rose-300";
-  const active =
-    "text-rose-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:scale-x-100 after:origin-left after:rounded-full after:bg-rose-300 after:transition-transform after:duration-300";
+    "relative px-3 py-1.5 text-sm font-medium transition-colors duration-200";
+  const inactive = "text-slate-200/80 hover:text-rose-300";
+  const active = "text-rose-300";
 
   return (
     <header
-      className={
-        "fixed inset-x-0 top-0 z-50 h-16 transition-all animate-slide-down " +
-        (scrolled
-          ? "bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 shadow-sm"
-          : "bg-gray-900/90 backdrop-blur-sm")
-      }
+      className={`fixed inset-x-0 top-0 z-40 ${
+        scrolled ? "backdrop-blur-lg bg-slate-950/70 border-b border-slate-900" : "bg-transparent"
+      }`}
     >
-      <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
-        {/* brand */}
-      <Link to="/" className="flex items-center gap-2 group">
-          {/*<Star className="h-6 w-6 text-rose-300 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />*/}
-          <img
-  src={PeacockLogo}
-  alt="Peacock Logo"
-  className="h-11 w-11 transition-all duration-300 group-hover:rotate-5 group-hover:scale-110
-             hover:drop-shadow-[0_0_10px_rgba(0,170,255,0.7)]"
-/>
-          <span className="text-base font-semibold text-white">
-            Kaaviyashri Saraboji
-          </span>
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Brand */}
+        <Link to="/" className="flex items-center gap-2 group">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 border border-slate-700 overflow-hidden">
+            <img
+              src={PeacockLogo}
+              alt="Logo"
+              className="h-8 w-8 rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-semibold text-slate-50">
+              Kaaviyashri&nbsp;Saraboji
+            </span>
+            <span className="text-[11px] text-slate-400">
+              Portfolio · Software Engineering & AI
+            </span>
+          </div>
         </Link>
 
-        {/* desktop */}
-        <nav className="hidden md:flex items-center gap-8">
-          {nav.map((n) => (
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-1 rounded-full bg-slate-950/70 border border-slate-800 px-2 py-1">
+          {navItems.map((item) => (
             <NavLink
-              key={n.to}
-              to={n.to}
-              end={n.to === "/"}
+              key={item.to}
+              to={item.to}
+              end={item.to === "/"}
               className={({ isActive }) =>
-                `${base} ${isActive ? active : inactive} group`
+                `${base} ${isActive ? active : inactive}`
               }
             >
-              <span className="relative">
-                {n.label}
-                {/* hover underline for inactive links */}
-                <span className="pointer-events-none absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-rose-300 transition-transform duration-300 group-hover:scale-x-100" />
-              </span>
+              {({ isActive }) => (
+                <span className="relative inline-flex items-center">
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute inset-x-0 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-rose-400 to-cyan-400" />
+                  )}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>
 
-        {/* mobile */}
+        {/* Mobile button */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 text-gray-200/90 hover:text-rose-300"
-          aria-label="Toggle menu"
+          className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/80 p-2 text-slate-100 md:hidden"
+          aria-label="Toggle navigation"
         >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
+      {/* Mobile nav */}
       {open && (
-        <nav className="md:hidden border-t border-gray-800 bg-gray-900/95 backdrop-blur-sm animate-fade-in">
-          <div className="mx-auto max-w-6xl px-6 py-3">
-            <div className="flex flex-col">
-              {nav.map((n, i) => (
-                <NavLink
-                  key={n.to}
-                  to={n.to}
-                  end={n.to === "/"}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    "px-2 py-2 rounded-md " +
-                    (isActive
-                      ? "bg-gray-800 text-rose-300"
-                      : "text-gray-200/90 hover:text-rose-300 hover:bg-gray-800")
-                  }
-                >
-                  <span className={`animate-fade-up delay-${i * 100}`}>{n.label}</span>
-                </NavLink>
-              ))}
-            </div>
+        <div className="md:hidden border-t border-slate-900 bg-slate-950/95 backdrop-blur-xl">
+          <div className="mx-auto max-w-6xl px-4 py-3 space-y-1">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === "/"}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `block rounded-lg px-3 py-2 text-sm ${
+                    isActive
+                      ? "bg-slate-900 text-rose-300"
+                      : "text-slate-200/90 hover:bg-slate-900 hover:text-rose-300"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </div>
-        </nav>
+        </div>
       )}
     </header>
   );

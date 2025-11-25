@@ -1,310 +1,381 @@
+// src/pages/About.jsx
 import React from "react";
-import { Link } from "react-router-dom";
-import {
- Heart,
- Target,
- Users,
- Sparkles,
- Star,
- Download,
- Trophy,
- Briefcase,
- Code,
- GraduationCap,
- CheckCircle2,
- HandHeart,
- ShieldCheck,
- BookOpen,
- User,
-} from "lucide-react";
-
-// --- A small, inline Reveal component to use directly in this file ---
-function Reveal({ children, className = "" }) {
- return <div className={className}>{children}</div>;
-}
-
-// The resume PDF is expected to be in the 'public' folder.
-const resumeUrl = "/Kaaviyashri-Resume.pdf";
+import { GraduationCap, Layers, Award, Code2, Brain } from "lucide-react";
+import Reveal from "../components/Reveal";
+import { personalInfo } from "../data/personal.js";
 
 export default function About() {
- return (
-   <div className="min-h-screen">
-     {/* HERO & BIO */}
-     <section className="bg-gray-50">
-       <div className="mx-auto max-w-6xl px-6 py-16">
-         {/* HERO */}
-         <Reveal className="animate-fade-up">
-           <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600">
-             <User className="h-4 w-4 text-rose-400" />
-             Background
-           </span>
-           <h1 className="mt-6 text-4xl font-bold text-gray-900">About Me</h1>
-           <p className="mt-4 text-lg text-gray-700">
-             I’m Kaaviya, a graduate student in
-             software engineering who enjoys building practical AI/ML and{" "}
-             full-stack solutions.
-           </p>
-         </Reveal>
-         {/* Left: Bio */}
-         <Reveal className="animate-fade-up delay-100 mt-10">
-           <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm max-w-2xl mx-auto">
-             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-rose-100/70 px-3 py-1 text-sm font-medium text-rose-700">
-               <GraduationCap className="h-4 w-4" />
-               MS Software Engineering — University of Wisconsin–La Crosse
-             </div>
+  return (
+    <div className="mx-auto max-w-6xl space-y-12">
+      {/* Intro */}
+      <section className="pt-4 sm:pt-6">
+        <Reveal className="space-y-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-3 py-1 text-[11px] font-medium text-slate-300">
+            About
+          </span>
 
-             <p className="text-gray-700">
-               My background bridges AI/ML, data science, and software engineering.
-               I enjoy turning ideas into dependable systems - clean design, measurable outcomes, and
-               thoughtful user experience. Before graduate school, I spent 4+ years in
-               digital banking technology where I partnered with tech teams and built data dashboards
-               used across large operations.
-             </p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-50">
+            About {personalInfo?.name || "me"}
+          </h1>
 
-             <p className="mt-4 text-gray-700">
-               I’m actively learning and improving - especially around model evaluation, responsible
-               deployment, and building maintainable web apps. 
-             </p>
-           </div>
-         </Reveal>
-       </div>
-     </section>
-     
-     {/* EDUCATION */}
-     <section className="bg-gray-50">
-       <div className="mx-auto max-w-6xl px-6 py-16">
-         <Reveal className="animate-fade-up">
-           <h2 className="text-2xl font-semibold text-gray-900">Education</h2>
-           <p className="mt-2 text-gray-700">Learning that shaped my foundations and focus.</p>
-         </Reveal>
+          <p className="max-w-3xl text-sm sm:text-base text-slate-200/90">
+            I am a graduate student in{" "}
+            <span className="font-semibold text-rose-200">
+              Software Engineering at the University of Wisconsin–La Crosse
+            </span>{" "}
+            with prior degrees in Computer Science from Bharathidasan University
+            and A.V.V.M. Sri Pushpam College. My work spans{" "}
+            <span className="text-rose-200">
+              software engineering, applied artificial intelligence, computer
+              vision, and data analysis
+            </span>
+            , with an emphasis on rigorous methods, safety, and maintainable
+            systems.
+          </p>
 
-         {/* Now 3 columns on desktop */}
-         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-           {/* MS — Software Engineering (UWL) */}
-           <Reveal className="animate-fade-up delay-100">
-             <div className="h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="flex items-start justify-between gap-4">
-                 <div>
-                   <h3 className="text-lg font-semibold text-gray-900">MS - Software Engineering</h3>
-                   <p className="text-sm text-gray-700">University of Wisconsin–La Crosse</p>
-                 </div>
-                 <GraduationCap className="h-5 w-5 text-rose-600" />
-               </div>
-               <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                 <li className="flex items-start gap-2">
-                   <Star className="mt-0.5 h-4 w-4 text-rose-500" />
-                   <span>Merit-Based Out-of-State Tuition Award (2025–26)</span>
-                 </li>
-                 <li className="flex items-start gap-2">
-                   <Trophy className="mt-0.5 h-4 w-4 text-rose-500" />
-                   <span>3-Minute Graduate Project Competition — Winner</span>
-                 </li>
-                 <li className="flex items-start gap-2">
-                   <CheckCircle2 className="mt-0.5 h-4 w-4 text-rose-500" />
-                   <span>Coursework: Artificial Intelligence, Software Design, Software Verification & Validation, Software Project Management, Information Security, Programming Language Concepts</span>
-                 </li>
-               </ul>
-             </div>
-           </Reveal>
+          <p className="max-w-3xl text-sm sm:text-base text-slate-200/90">
+            This page summarises my formal education, licenses & certifications,
+            and technical skills.
+          </p>
+        </Reveal>
+      </section>
 
-           {/* MSc — Computer Science */}
-           <Reveal className="animate-fade-up delay-200">
-             <div className="h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="flex items-start justify-between gap-4">
-                 <div>
-                   <h3 className="text-lg font-semibold text-gray-900">MSc - Computer Science</h3>
-                   <p className="text-sm text-gray-700">
-                     Bharathidasan University
-                   </p>
-                 </div>
-                 <GraduationCap className="h-5 w-5 text-rose-600" />
-               </div>
-               <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                 <li className="flex items-start gap-2">
-                   <CheckCircle2 className="mt-0.5 h-4 w-4 text-rose-500" />
-                   <span>Focus: OOAD & UML, Advanced Java Programming, Web Technologies, C#, .NET, Data Mining and Data Warehousing, Network Security, Compiler Design and Open Source Technologies </span>
-                 </li>
-                 <li className="flex items-start gap-2">
-                   <CheckCircle2 className="mt-0.5 h-4 w-4 text-rose-500" />
-                   <span>Capstone & advanced coursework in applied computing</span>
-                 </li>
-               </ul>
-             </div>
-           </Reveal>
+      {/* Education */}
+      <section className="space-y-6">
+        <Reveal className="flex items-center gap-2">
+          <GraduationCap className="h-5 w-5 text-rose-400" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+            Education
+          </h2>
+        </Reveal>
 
-           {/* BSc — Computer Science */}
-           <Reveal className="animate-fade-up delay-300">
-             <div className="h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="flex items-start justify-between gap-4">
-                 <div>
-                   <h3 className="text-lg font-semibold text-gray-900">BSc - Computer Science</h3>
-                   <p className="text-sm text-gray-700">
-                     A.V.V.M. Sri Pushpam College (Bharathidasan University)
-                   </p>
-                 </div>
-                 <GraduationCap className="h-5 w-5 text-rose-600" />
-               </div>
-               <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                 <li className="flex items-start gap-2">
-                   <Trophy className="mt-0.5 h-4 w-4 text-rose-500" />
-                   <span>Certificate of Merit (2019) — Bharathidasan University</span>
-                 </li>
-                 <li className="flex items-start gap-2">
-                   <Trophy className="mt-0.5 h-4 w-4 text-rose-500" />
-                   <span>Certificate of Proficiency (2018) — Sri Pushpam College</span>
-                 </li>
-               </ul>
-             </div>
-           </Reveal>
-         </div>
-       </div>
-     </section>
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* UWL MSE */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-3">
+            <div>
+              <p className="text-sm font-semibold text-slate-50">
+                Master of Science — Software Engineering
+              </p>
+              <p className="text-xs text-slate-400">
+                University of Wisconsin–La Crosse, USA
+              </p>
+              <p className="text-[11px] text-slate-500">
+                Aug 2024 – May 2026 (expected)
+              </p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                Selected coursework
+              </p>
+              <ul className="mt-1 space-y-1 text-[11px] text-slate-300">
+                <li>CS 521 — Program Language Concepts</li>
+                <li>CS 741 — Software Engineering Principles</li>
+                <li>CS 743 — Software Verification &amp; Validation</li>
+                <li>CS 555 — Fundamentals of Information Security</li>
+                <li>CS 744 — Software Project Management</li>
+                <li>CS 746 — Software Modeling &amp; Analysis</li>
+                <li>CS 552 — Artificial Intelligence (in progress)</li>
+                <li>CS 798 — Software Development Project (in progress)</li>
+              </ul>
+            </div>
+          </Reveal>
 
+          {/* MSc CS */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-3">
+            <div>
+              <p className="text-sm font-semibold text-slate-50">
+                Master of Science — Computer Science
+              </p>
+              <p className="text-xs text-slate-400">
+                Bharathidasan University, India
+              </p>
+              <p className="text-[11px] text-slate-500">2021 – 2023</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                Selected coursework
+              </p>
+              <ul className="mt-1 space-y-1 text-[11px] text-slate-300">
+                <li>Object-Oriented Analysis &amp; Design (OOAD) and UML</li>
+                <li>Advanced Java Programming</li>
+                <li>Compiler Design</li>
+                <li>Microprocessors &amp; Microcontrollers</li>
+                <li>Open Source Technologies</li>
+                <li>Network Security</li>
+                <li>Data Mining &amp; Data Warehousing</li>
+                <li>C# and .NET Framework</li>
+                <li>Web Technologies &amp; Open Source Labs</li>
+                <li>Major Software Project</li>
+              </ul>
+            </div>
+          </Reveal>
 
-     {/* SKILLS */}
-     <section className="bg-white">
-       <div className="mx-auto max-w-6xl px-6 py-16">
-         <Reveal className="animate-fade-up">
-           <h2 className="text-2xl font-semibold text-gray-900">Skills</h2>
-           <p className="mt-2 text-gray-700">
-             A focused toolkit across AI/ML, data science, full-stack development, and software engineering.
-           </p>
-         </Reveal>
+          {/* BSc CS */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-3">
+            <div>
+              <p className="text-sm font-semibold text-slate-50">
+                Bachelor of Science — Computer Science
+              </p>
+              <p className="text-xs text-slate-400">
+                A.V.V.M. Sri Pushpam College (BDU), India
+              </p>
+              <p className="text-[11px] text-slate-500">2015 – 2018</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                Selected coursework
+              </p>
+              <ul className="mt-1 space-y-1 text-[11px] text-slate-300">
+                <li>Problem Solving &amp; Programming (theory + lab)</li>
+                <li>C, C++, and Java Programming</li>
+                <li>Data Structures</li>
+                <li>Operating Systems</li>
+                <li>Database Management Systems (DBMS + lab)</li>
+                <li>Data Communication Networks</li>
+                <li>Computer Architecture &amp; Microprocessor</li>
+                <li>Web Media I &amp; II; Software Engineering (elective)</li>
+                <li>Computer Graphics (elective); Soft Skills Development</li>
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-           {/* Programming */}
-           <Reveal className="animate-fade-up delay-100">
-             <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="mb-3 flex items-center gap-2">
-                 <Code className="h-5 w-5 text-rose-600" />
-                 <h3 className="text-base font-semibold text-gray-900">Programming</h3>
-               </div>
-               <p className="text-sm text-gray-700">
-                 C, C++, Java, Python, JavaScript, R, Haskell, Prolog, Scheme, Lisp
-               </p>
-             </div>
-           </Reveal>
+      {/* Certifications */}
+      <section className="space-y-6">
+        <Reveal className="flex items-center gap-2">
+          <Award className="h-5 w-5 text-cyan-400" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+            Licenses &amp; certifications
+          </h2>
+        </Reveal>
 
-           {/* AI/ML & Data */}
-           <Reveal className="animate-fade-up delay-200">
-             <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="mb-3 flex items-center gap-2">
-                 <Target className="h-5 w-5 text-rose-600" />
-                 <h3 className="text-base font-semibold text-gray-900">AI/ML & Data</h3>
-               </div>
-               <p className="text-sm text-gray-700">
-                 scikit-learn, TensorFlow, PyTorch, OpenCV, YOLO, NumPy, Pandas, Matplotlib, Plotly, Statsmodels, Tableau, Power BI<br />
-                 <span className="italic text-gray-500">Currently learning: Hugging Face, MLflow</span>
-               </p>
-             </div>
-           </Reveal>
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Health, ethics, compliance + PM */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-4 text-sm text-slate-300">
+            <div className="flex items-center gap-2">
+              <Brain className="h-4 w-4 text-rose-300" />
+              <p className="text-sm font-semibold text-slate-50">
+                Health, ethics &amp; compliance
+              </p>
+            </div>
+            <ul className="space-y-2">
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Ethics and Governance of Artificial Intelligence for Health
+                </span>
+                , World Health Organization (WHO), Oct 2025.{" "}
+                <a
+                  href="https://whoacademy.org/achievements/38f810ce-97b9-42d7-8a16-422906580a3b"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
+                >
+                  View credential
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  HIPAA Compliance Training Program
+                </span>
+                , HIPAA Training, Oct 2025 (expires Oct 2026).
+              </li>
+            </ul>
 
-           {/* Web & Tools */}
-           <Reveal className="animate-fade-up delay-300">
-             <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="mb-3 flex items-center gap-2">
-                 <Briefcase className="h-5 w-5 text-rose-600" />
-                 <h3 className="text-base font-semibold text-gray-900">Web & Tools</h3>
-               </div>
-               <p className="text-sm text-gray-700">
-                 MERN (MongoDB, Express, React, Node), REST APIs, JWT Auth, RBAC<br />
-                 MySQL, MongoDB, Git/GitHub, Figma<br />
-                 <span className="italic text-gray-500">Currently learning: Docker, PostgreSQL, CI/CD (GitHub Actions)</span>
-               </p>
-             </div>
-           </Reveal>
+            <div className="flex items-center gap-2 pt-4">
+              <Code2 className="h-4 w-4 text-emerald-300" />
+              <p className="text-sm font-semibold text-slate-50">
+                Project management
+              </p>
+            </div>
+            <ul className="space-y-2">
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Fundamentals of Agile Project Management
+                </span>
+                , Project Management Institute (PMI), Jan 2025.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Fundamentals of Predictive Project Management
+                </span>
+                , Project Management Institute (PMI), Jan 2025.
+              </li>
+            </ul>
+          </Reveal>
 
-           {/* Software Engineering */}
-           <Reveal className="animate-fade-up delay-400">
-             <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="mb-3 flex items-center gap-2">
-                 <ShieldCheck className="h-5 w-5 text-rose-600" />
-                 <h3 className="text-base font-semibold text-gray-900">Software Engineering</h3>
-               </div>
-               <p className="text-sm text-gray-700">
-                 Secure Coding (SQLi, XSS), Cryptography (RSA, Diffie–Hellman, OIDC)<br />
-                 Formal Verification (VDM-SL), Testing (JUnit, Selenium, Decision Tables, Petri Nets)<br />
-                 <span className="italic text-gray-500">Currently learning: OWASP Top 10, API Security</span>
-               </p>
-             </div>
-           </Reveal>
+          {/* AI/ML, GenAI, programming, full stack */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-4 text-sm text-slate-300">
+            <div className="flex items-center gap-2">
+              <Brain className="h-4 w-4 text-cyan-300" />
+              <p className="text-sm font-semibold text-slate-50">
+                AI, data &amp; software
+              </p>
+            </div>
+            <ul className="space-y-2">
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Deloitte Australia – Data Analytics Job Simulation
+                </span>
+                , Forage, Aug 2025 (ID: PJXf9Cu33rZBHinNx).
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Google AI Essentials
+                </span>
+                , Google, Aug 2025.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  AWS Educate – Introduction to Generative AI
+                </span>
+                , Amazon Web Services, Jul 2025.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  AWS Educate – Machine Learning Foundations
+                </span>
+                , Amazon Web Services, Jul 2025.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Fundamentals of Machine Learning and Artificial Intelligence
+                </span>
+                , Amazon Web Services, Jul 2025.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Prompt Engineering &amp; Programming with OpenAI
+                </span>
+                , Columbia+ (Columbia University), Jul 2025.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Introduction to Artificial Intelligence
+                </span>
+                , IBM, Jun 2025.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Java Full Stack Developer
+                </span>
+                , Greens Technology, May 2024.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-50">
+                  Fundamentals of Java Programming
+                </span>
+                , Coursera, Apr 2024.
+              </li>
+            </ul>
+          </Reveal>
+        </div>
+      </section>
 
-           {/* Collaboration & Project Tools */}
-           <Reveal className="animate-fade-up delay-500">
-             <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-               <div className="mb-3 flex items-center gap-2">
-                 <Users className="h-5 w-5 text-rose-600" />
-                 <h3 className="text-base font-semibold text-gray-900">Collaboration</h3>
-               </div>
-               <p className="text-sm text-gray-700">
-                 Agile & Predictive Project Management (PMI Certified), UML Modeling, Requirements Engineering<br />
-                 Team Tools: Jira, Trello, Slack
-               </p>
-             </div>
-           </Reveal>
-         </div>
-       </div>
-     </section>
+      {/* Technical skills */}
+      <section className="space-y-6 pb-4 sm:pb-6">
+        <Reveal className="flex items-center gap-2">
+          <Layers className="h-5 w-5 text-emerald-400" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+            Technical skills
+          </h2>
+        </Reveal>
 
+        <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
+          <div className="grid gap-4 text-sm text-slate-200 sm:grid-cols-2">
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Programming languages
+              </p>
+              <p>Python, Java, C/C++, JavaScript, SQL, R</p>
+            </div>
 
-     {/* CERTIFICATIONS */}
-     <section className="bg-gray-50">
-       <div className="mx-auto max-w-6xl px-6 py-16">
-         <Reveal className="animate-fade-up">
-           <h2 className="text-2xl font-semibold text-gray-900">Certifications</h2>
-           <p className="mt-2 text-gray-700">Recent learning highlights from 2024–2025.</p>
-         </Reveal>
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Machine learning &amp; AI
+              </p>
+              <p>
+                scikit-learn, TensorFlow, PyTorch, Keras; model training,
+                cross-validation, hyperparameter tuning, predictive modeling,
+                evaluation (precision, recall, F1-score, ROC/AUC).
+              </p>
+            </div>
 
-         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-           {[
-             "Deloitte - Data Analytics Job Simulation (2025)",
-             "Google - AI Essentials (2025)",
-             "AWS Educate - Generative AI, ML Foundations, Fundamentals of AI (2025)",
-             "Prompt Engineering with OpenAI - Columbia+ (2025)",
-             "IBM - Introduction to AI (2025)",
-             "PMI - Agile & Predictive Project Management (2025)",
-             "Java Full Stack Developer - Greens Technology (2024)",
-             "Fundamentals of Java Programming - Coursera (2024)",
-           ].map((c, i) => (
-             <Reveal key={c} className={`animate-fade-up delay-${i * 100}`}>
-               <div className="flex h-full items-start gap-3 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
-                 <span className="mt-1.5 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-rose-400" />
-                 <div className="text-sm text-gray-800">{c}</div>
-               </div>
-             </Reveal>
-           ))}
-         </div>
-       </div>
-     </section>
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">Computer vision</p>
+              <p>OpenCV, YOLO-based object detection, image processing, data augmentation, real-time inference.</p>
+            </div>
 
-     {/* CAMPUS & COMMUNITY */}
-     <section className="bg-white">
-       <div className="mx-auto max-w-6xl px-6 py-16">
-         <Reveal className="animate-fade-up">
-           <h2 className="text-2xl font-semibold text-gray-900">Campus & Community Involvement</h2>
-           <p className="mt-2 text-gray-700">I enjoy contributing to student life and local events.</p>
-         </Reveal>
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Data science &amp; statistics
+              </p>
+              <p>
+                Pandas, NumPy, SciPy, hypothesis testing, ANOVA, regression
+                analysis, feature engineering, data cleaning, ETL pipelines.
+              </p>
+            </div>
 
-         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-           {[
-             "Senator - International Student Organization (UWL)",
-             "Volunteer Greeter - Election Day Helper (UWL)",
-             "Volunteer Guide - Special Olympics, La Crosse",
-             "Desk Assistant - The Nature Place, La Crosse",
-             "Activity Host - Children’s Museum of La Crosse",
-             "Presenter - International Cultural Coffee Hour (UWL)",
-             "Life Saver Certificate - Fire Prevention & Fire Fighting",
-           ].map((v, i) => (
-             <Reveal key={v} className={`animate-fade-up delay-${i * 100}`}>
-               <div className="flex items-start gap-3 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
-                 <HandHeart className="mt-0.5 h-5 w-5 text-rose-600" />
-                 <div className="text-sm text-gray-800">{v}</div>
-               </div>
-             </Reveal>
-           ))}
-         </div>
-       </div>
-     </section>
-   </div>
- );
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Visualization &amp; BI
+              </p>
+              <p>
+                Matplotlib, Seaborn, Plotly, Tableau, Power BI, Jupyter
+                Notebook, Google Colab, Google Data Studio.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Web &amp; backend development
+              </p>
+              <p>
+                React.js, Node.js, Express.js, HTML5, CSS3, Tailwind CSS,
+                Bootstrap, REST APIs, JWT authentication.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">Databases</p>
+              <p>MongoDB, MySQL, Firebase, basic BigQuery experience.</p>
+            </div>
+
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Cloud, tools &amp; DevOps
+              </p>
+              <p>
+                Git/GitHub, VS Code, IntelliJ IDEA, Eclipse, Docker, Postman,
+                AWS (S3, EC2), basic CI/CD pipelines.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Software engineering, testing &amp; security
+              </p>
+              <p>
+                Agile/Scrum, UML modeling, formal methods (VDM), automated
+                testing (JUnit, Selenium), secure coding (OWASP practices),
+                cryptographic protocols (RSA, Diffie–Hellman), OIDC-based
+                authentication, TLS/SSH testing.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Research &amp; analytical methods
+              </p>
+              <p>
+                Literature review and synthesis, experimental design, data
+                collection and preprocessing, statistical analysis, model
+                evaluation and validation.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+    </div>
+  );
 }

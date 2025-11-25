@@ -1,40 +1,69 @@
 import React from "react";
-import { Mail, Linkedin, Github, Star } from "lucide-react";
-import Reveal from "./Reveal";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { Link } from "react-router-dom";
+import Reveal from "./Reveal";
 import PeacockLogo from "../assets/peacock.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   const socials = [
-    { href: "mailto:saraboji5411@uwlax.edu", icon: Mail, label: "Email" },
+    {
+      href: "mailto:saraboji5411@uwlax.edu",
+      icon: Mail,
+      label: "Email",
+    },
     {
       href: "https://www.linkedin.com/in/kaaviyashri-saraboji-6ba1871ba",
       icon: Linkedin,
       label: "LinkedIn",
     },
-    { href: "https://github.com/Kaaviyashri", icon: Github, label: "GitHub" },
+    {
+      href: "https://github.com/Kaaviyashri",
+      icon: Github,
+      label: "GitHub",
+    },
+  ];
+
+  const navLinks = [
+    { to: "/about", label: "About" },
+    { to: "/research", label: "Research" },
+    { to: "/projects", label: "Projects" },
+    { to: "/experience", label: "Experience" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
-    <footer className="bg-gray-950 text-gray-300">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <Reveal className="animate-fade-up">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {/* Brand */}
+    <footer className="mt-16 border-t border-slate-800 bg-slate-950 text-slate-300">
+      <div className="mx-auto max-w-6xl px-6 py-10">
+        <Reveal className="space-y-8">
+          {/* Top grid */}
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Brand & socials */}
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                {/*<Star className="h-6 w-6 text-rose-300" />*/}
-                <img src={PeacockLogo} alt="Peacock Logo" className="h-9 w-9" />
-                <span className="text-lg font-semibold text-white">
-                  Kaaviyashri Saraboji
-                </span>
+                <img
+                  src={PeacockLogo}
+                  alt="Peacock logo"
+                  className="h-9 w-9 rounded-xl object-contain"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-slate-50">
+                    Kaaviyashri Saraboji
+                  </p>
+                  <p className="text-xs text-slate-400">
+                    Graduate student · Software Engineering · Applied AI
+                  </p>
+                </div>
               </div>
-              <p className="text-sm text-gray-400">
-                Graduate Student - Software Engineer
+
+              <p className="max-w-xs text-xs text-slate-400">
+                Building and studying software systems, machine learning models,
+                and data-driven tools with applications in healthcare, public
+                safety, and nonprofit work.
               </p>
-              <div className="flex gap-3">
+
+              <div className="flex gap-2 pt-1">
                 {socials.map((s, i) => (
                   <a
                     key={s.label}
@@ -42,51 +71,79 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={s.label}
-                    className={`rounded-lg bg-gray-900 p-2 text-gray-400 transition hover:scale-105 hover:bg-gray-800 hover:text-rose-300 animate-fade-up delay-${100 + i * 100}`}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-300 hover:text-rose-200 hover:border-rose-400 hover:bg-slate-900 transition"
                   >
-                    <s.icon className="h-5 w-5" />
+                    <s.icon className="h-4 w-4" />
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div className="animate-fade-up delay-200">
-              <h3 className="mb-3 font-semibold text-white">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                {[
-                  { label: "Home", to: "/" },
-                  { label: "About", to: "/about" },
-                  { label: "Research", to: "/research" },
-                  { label: "Projects", to: "/projects" },
-                  { label: "Experience", to: "/experience" },
-                  { label: "Contact", to: "/contact" },
-                ].map((item, i) => (
-                  <li key={item.to} className={`animate-fade-up delay-[${200 + i * 80}ms]`}>
-                    <Link to={item.to} className="transition-colors hover:text-rose-300">
-                      {item.label}
+            {/* Site navigation */}
+            <div className="text-sm">
+              <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                Navigation
+              </h3>
+              <ul className="space-y-1.5">
+                {navLinks.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="text-slate-300 hover:text-rose-200 transition text-xs"
+                    >
+                      {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Contact */}
-            <div className="text-sm animate-fade-up delay-300">
-              <h3 className="mb-3 font-semibold text-white">Get in touch</h3>
-              <a
-                href="mailto:saraboji5411@uwlax.edu"
-                className="block transition-colors hover:text-rose-300"
-              >
-                saraboji5411@uwlax.edu
-              </a>
-              <p className="text-gray-400">La Crosse, WI</p>
+            {/* Contact & location */}
+            <div className="text-sm">
+              <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                Contact
+              </h3>
+              <div className="space-y-2 text-xs text-slate-300">
+                <p>
+                  Email:{" "}
+                  <a
+                    href="mailto:saraboji5411@uwlax.edu"
+                    className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
+                  >
+                    saraboji5411@uwlax.edu
+                  </a>
+                </p>
+                <p>
+                  LinkedIn:{" "}
+                  <a
+                    href="https://www.linkedin.com/in/kaaviyashri/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
+                  >
+                    www.linkedin.com/in/kaaviyashri
+                  </a>
+                </p>
+                <p>
+                  GitHub:{" "}
+                  <a
+                    href="https://github.com/Kaaviyashri"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
+                  >
+                    github.com/Kaaviyashri
+                  </a>
+                </p>
+                <p className="pt-1 text-slate-400">Based in La Crosse, WI, USA.</p>
+              </div>
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-gray-800 pt-6 text-xs text-gray-500 sm:flex-row animate-fade-in delay-400">
+          {/* Bottom bar */}
+          <div className="border-t border-slate-800 pt-4 flex flex-col items-center justify-between gap-2 text-[11px] text-slate-500 sm:flex-row">
             <span>© {year} Kaaviyashri Saraboji. All rights reserved.</span>
-            <span>Built with React + Tailwind</span>
+            <span>Built with React &amp; Tailwind CSS.</span>
           </div>
         </Reveal>
       </div>

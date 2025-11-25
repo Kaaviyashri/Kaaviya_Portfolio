@@ -1,264 +1,291 @@
+// src/pages/Research.jsx
 import React from "react";
 import {
   Sparkles,
-  Target,
-  Heart,
+  BrainCircuit,
+  HeartPulse,
   ShieldCheck,
-  FlaskConical,
-  Map,
   Camera,
   BarChart3,
-  BookOpen,
   FileText,
-  ExternalLink,
-  CheckCircle2,
-  Clock,
 } from "lucide-react";
-
-// The Reveal component is now included directly in this file
-function Reveal({ children, className = "" }) {
-  return <div className={className}>{children}</div>;
-}
+import Reveal from "../components/Reveal";
+import { personalInfo } from "../data/personal";
 
 export default function Research() {
   return (
-    <div className="min-h-screen">
-      {/* ===== Hero ===== */}
-      <section className="px-6 py-16 bg-gradient-to-br from-gray-50 via-rose-50/30 to-white">
-        <div className="mx-auto max-w-6xl space-y-6">
-          <Reveal className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600">
-              <Sparkles className="h-4 w-4 text-rose-400" />
-              Research & Innovation
+    <div className="mx-auto max-w-6xl space-y-12">
+      {/* Intro */}
+      <section className="pt-4 sm:pt-6">
+        <Reveal className="space-y-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-3 py-1 text-[11px] font-medium text-slate-300">
+            Research
+          </span>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-50">
+            Research focus &amp; experience
+          </h1>
+
+          <p className="max-w-3xl text-sm sm:text-base text-slate-200/90">
+            My research centers on{" "}
+            <span className="text-rose-200">
+              machine learning and artificial intelligence for healthcare and
+              safety-critical applications
             </span>
-          </Reveal>
+            . I am particularly interested in predictive and diagnostic models
+            for chronic diseases such as cancer, trustworthy and interpretable AI systems, and
+            governance frameworks that ensure safe deployment in real clinical
+            environments.
+          </p>
 
-          <Reveal className="animate-fade-up delay-100">
-            <h1 className="text-4xl font-bold text-gray-900">
-              Exploring AI
-            </h1>
-          </Reveal>
-
-          <Reveal className="animate-fade-up delay-200">
-            <p className="max-w-3xl text-lg text-gray-700">
-              I explore artificial intelligence across{" "}
-              machine learning,{" "}
-              deep learning,{" "}
-              computer vision, and{" "}
-              AI applications in healthcare and ethics of AI. My current focus is on developing projects and research skills that prepare
-              me for impactful, real-world applications in the future.
-            </p>
-          </Reveal>
-        </div>
+          <p className="max-w-3xl text-sm sm:text-base text-slate-200/90">
+            Below is an overview of my current research projects and thematic
+            interests, as described in my Ph.D. application materials.
+          </p>
+        </Reveal>
       </section>
 
-      {/* ===== Featured Project (In Progress) ===== */}
-      <section className="px-6 py-16 bg-white">
-        <div className="mx-auto max-w-6xl">
-          <Reveal className="animate-fade-up">
-            <div className="mb-12">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">
-                Featured Project
-              </h2>
-              <p className="text-gray-600 max-w-2xl">
-                Ongoing applied research.
+      {/* Research interests */}
+      <section className="space-y-6">
+        <Reveal className="flex items-center gap-2">
+          <BrainCircuit className="h-5 w-5 text-rose-400" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+            Research interests
+          </h2>
+        </Reveal>
+
+        <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 sm:p-6">
+          <p className="text-sm sm:text-base text-slate-200/90 mb-3">
+            My research focuses on developing{" "}
+            <span className="text-rose-200">
+              machine learning methods for healthcare and biomedical
+              applications
+            </span>
+            . I am especially interested in early detection, progression
+            analysis, and decision support for chronic diseases, as well as the
+            ethical and governance dimensions of AI in clinical practice.
+          </p>
+
+          <div className="grid gap-4 text-sm text-slate-200 sm:grid-cols-2">
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Clinical &amp; biomedical ML
               </p>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-5 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-            {/* Left: Details */}
-            <Reveal className="lg:col-span-3 bg-white p-8 space-y-6 animate-fade-up">
-              <div className="inline-flex items-center gap-2 rounded-full bg-rose-100/70 px-3 py-1 text-sm font-medium text-rose-700">
-                <Clock className="h-4 w-4" />
-                In Progress
-              </div>
-
-              <h3 className="text-2xl font-semibold text-gray-900">
-                AI-Driven Wildlife Collision Prevention
-              </h3>
-
-              <p className="text-gray-700">
-                Developing a computer-vision system to detect animals near roads
-                and alert drivers or infrastructure, helping reduce wildlife-vehicle
-                collisions. The work blends dataset collection,{" "}
-                model training, and ethical deployment for
-                communities across Wisconsin.
-              </p>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="flex items-start gap-3">
-                  <Camera className="h-5 w-5 text-rose-500 mt-0.5" />
-                  <p className="text-sm text-gray-700">
-                    Data capture & preprocessing for multi-species detection
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <BarChart3 className="h-5 w-5 text-rose-500 mt-0.5" />
-                  <p className="text-sm text-gray-700">
-                    Model baselines, evaluation, and error analysis
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <ShieldCheck className="h-5 w-5 text-rose-500 mt-0.5" />
-                  <p className="text-sm text-gray-700">
-                    Safety, privacy, and fairness considerations
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Map className="h-5 w-5 text-rose-500 mt-0.5" />
-                  <p className="text-sm text-gray-700">
-                    Real-world constraints: lighting, weather, roadside angle
-                  </p>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                <p className="text-sm text-gray-700">
-                  Recognized via{" "}
-                  UWL 3-Minute Graduate Project Competition (Winner) and
-                  covered by the university news feature.
-                </p>
-                <a
-                  href="https://www.uwlax.edu/news/posts/nature-inspired-innovation/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-rose-600 hover:text-rose-500"
-                >
-                  Read the story
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
-            </Reveal>
-
-            {/* Right: Methodology snapshot */}
-            <Reveal className="lg:col-span-2 bg-gradient-to-br from-gray-50 to-rose-50 p-8 space-y-6 animate-fade-up delay-100">
-              <h4 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                <FlaskConical className="h-5 w-5 text-rose-500" />
-                Approach
-              </h4>
-
-              <ul className="space-y-3 text-sm text-gray-700">
-                {[
-                  "Problem framing with stakeholders",
-                  "Data collection & labeling strategy",
-                  "Model selection & iterative training",
-                  "Evaluation - precision, recall, deployment latency",
-                  "Pilot planning - sensor placement & monitoring",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-rose-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
+              <ul className="space-y-1 text-xs sm:text-sm text-slate-300">
+                <li>
+                  • Machine learning for clinical and biomedical datasets, with
+                  emphasis on early diagnosis and risk prediction.
+                </li>
+                <li>
+                  • Predictive modeling and decision-support tools using
+                  structured health, behavioral, and laboratory data.
+                </li>
               </ul>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* ===== Research Interests ===== */}
-      <section className="px-6 py-16 bg-gray-50">
-        <div className="mx-auto max-w-6xl">
-          <Reveal className="animate-fade-up">
-            <div className="mb-12">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">
-                Research Interests
-              </h2>
-              <p className="text-gray-600 max-w-2xl">
-                Areas I’m exploring across AI and software engineering
+            <div className="space-y-1">
+              <p className="font-semibold text-slate-50">
+                Trustworthy &amp; governance-aligned AI
               </p>
+              <ul className="space-y-1 text-xs sm:text-sm text-slate-300">
+                <li>
+                  • Trustworthy, interpretable, and reliable AI systems for
+                  high-stakes clinical decision-making.
+                </li>
+                <li>
+                  • Ethical, transparent, and governance-aligned AI frameworks
+                  that support safe deployment in healthcare settings.
+                </li>
+              </ul>
             </div>
-          </Reveal>
-
-          {/* Equal-height cards */}
-          <div className="grid gap-6 md:grid-cols-4 items-stretch">
-            {[
-              {
-                icon: Target,
-                title: "Machine Learning & Deep Learning",
-                text:
-                  "From predictive modeling to evaluation and real-world deployment, with a focus on responsibility and impact.",
-              },
-              {
-                icon: Camera,
-                title: "Computer Vision",
-                text:
-                  "Detection, tracking, and edge-constrained inference.",
-              },
-              {
-                icon: Heart,
-                title: "AI in Healthcare",
-                text:
-                  "Clinically meaningful predictions and patient-centric design.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "AI Ethics & Fairness",
-                text:
-                  "Bias mitigation, privacy, and transparency in AI systems.",
-              },
-            ].map((v, i) => (
-              <Reveal key={v.title} className={`animate-fade-up delay-${i * 120}`}>
-                <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition">
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-rose-100">
-                    <v.icon className="h-6 w-6 text-rose-500" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900">{v.title}</h3>
-                  <p className="mt-1 text-sm text-gray-600 flex-1">{v.text}</p>
-                </div>
-              </Reveal>
-            ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* ===== Publications / Presentations (placeholder now) ===== */}
-      <section className="px-6 py-16 bg-gray-50">
-        <div className="mx-auto max-w-6xl">
-          <Reveal className="animate-fade-up">
-            <div className="mb-12">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">
-                Publications & Presentations
-              </h2>
+      {/* Research experience */}
+      <section className="space-y-6 pb-4 sm:pb-8">
+        <Reveal className="flex items-center gap-2">
+          <Sparkles className="h-5 w-5 text-cyan-400" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+            Research experience
+          </h2>
+        </Reveal>
+
+        <div className="space-y-6">
+          {/* WHO governance-by-design project */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 sm:p-6 space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-rose-500/50 bg-rose-500/10 px-3 py-1 text-[11px] font-medium text-rose-100">
+                <HeartPulse className="h-3.5 w-3.5" />
+                Healthcare AI governance
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/80 px-3 py-1 text-[11px] font-medium text-slate-300">
+                Narrative review · Framework design
+              </span>
             </div>
+
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-50">
+              Operationalising WHO’s Ethical Principles for AI in Healthcare:
+              Governance-by-Design Lifecycle Framework
+            </h3>
+
+            <p className="text-xs text-slate-400">
+              University of Wisconsin–La Crosse · September 2025 – Present
+            </p>
+
+            <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Conducting a narrative review on ethical governance of AI in
+                healthcare, mapping WHO’s six ethical principles across the AI
+                lifecycle.
+              </li>
+              <li>
+                • Analyzing peer-reviewed literature and institutional
+                frameworks (WHO, FDA GMLP, NAM, AMA, EU AI Act) to identify gaps
+                in operationalizing ethics in healthcare AI.
+              </li>
+              <li>
+                • Integrating reporting standards (SPIRIT-AI, CONSORT-AI,
+                DECIDE-AI, TRIPOD-AI) to align ethical principles with clinical
+                validation and monitoring practices.
+              </li>
+              <li>
+                • Evaluating data governance, algorithmic bias, privacy, and
+                accountability challenges in real-world AI deployments.
+              </li>
+              <li>
+                • Developing a Governance-by-Design lifecycle framework for
+                embedding transparency, equity, and accountability into AI
+                systems.
+              </li>
+            </ul>
           </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Example card 1 */}
-            <Reveal className="animate-fade-up">
-              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition">
-                <div className="flex items-center gap-2 text-rose-600 font-medium">
-                  <BookOpen className="h-4 w-4" />
-                  Presentation
-                </div>
-                <h3 className="mt-2 text-lg font-semibold text-gray-900">
-                  3-Minute Graduate Project Competition
-                </h3>
-                <p className="mt-1 text-sm text-gray-700">
-                  Pitching AI-driven wildlife collision prevention in an
-                  accessible, impact-centered format.
-                </p>
-              </div>
-            </Reveal>
+          {/* ARISTOTLE tool */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 sm:p-6 space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-rose-500/60 bg-rose-500/10 px-3 py-1 text-[11px] font-medium text-rose-100">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                Ethical readiness tool
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/80 px-3 py-1 text-[11px] font-medium text-slate-300">
+                HTML · CSS · JavaScript
+              </span>
+            </div>
 
-            {/* Example card 2 (placeholder for future) */}
-            <Reveal className="animate-fade-up delay-100">
-              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition">
-                <div className="flex items-center gap-2 text-rose-600 font-medium">
-                  <FileText className="h-4 w-4" />
-                  <p>Ongoing research</p>
-                </div>
-                <h3 className="mt-2 text-lg font-semibold text-gray-900">
-                  Survey on AI Fairness in Applied Systems
-                </h3>
-                <p className="mt-1 text-sm text-gray-700">
-                  Exploring practical fairness strategies in safety-critical and
-                  community-impact deployments.
-                </p>
-              </div>
-            </Reveal>
-          </div>
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-50">
+              ARISTOTLE: Ethical Assessment Tool for Healthcare AI Systems
+            </h3>
+
+            <p className="text-xs text-slate-400">
+              September 2025 – Present
+            </p>
+
+            <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Developing a comprehensive web-based assessment framework
+                (Assessment of Readiness and Implementation Standards for
+                Trustworthy and Lawful Ethics) for evaluating healthcare AI
+                systems against WHO ethical principles.
+              </li>
+              <li>
+                • Building an interactive prototype dashboard for healthcare
+                administrators, policymakers, and AI developers to assess system
+                compliance.
+              </li>
+              <li>
+                • Implementing an automated scoring system with
+                evidence-based recommendations for improving ethical readiness.
+              </li>
+            </ul>
+          </Reveal>
+
+          {/* Computer vision wildlife safety */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 sm:p-6 space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/60 bg-cyan-500/10 px-3 py-1 text-[11px] font-medium text-cyan-50">
+                <Camera className="h-3.5 w-3.5" />
+                Computer vision · YOLO
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/80 px-3 py-1 text-[11px] font-medium text-slate-300">
+                Python · TensorFlow · OpenCV
+              </span>
+            </div>
+
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-50">
+              Computer Vision for Wildlife Safety
+            </h3>
+
+            <p className="text-xs text-slate-400">
+              September 2024 – Present
+            </p>
+
+            <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Developing a computer vision system for real-time wildlife
+                detection to prevent animal–vehicle collisions, achieving{" "}
+                <span className="text-slate-100">85%+ accuracy</span> across
+                diverse species and environmental conditions.
+              </li>
+              <li>
+                • Building an automated data preprocessing and augmentation
+                pipeline for processing annotated wildlife images.
+              </li>
+              <li>
+                • Implementing a YOLO-based object detection model using
+                TensorFlow and OpenCV for multi-species identification.
+              </li>
+              <li>
+                • Conducting systematic model evaluation using precision,
+                recall, F1-score, and inference latency metrics.
+              </li>
+            </ul>
+          </Reveal>
+
+          {/* ML for healthcare analytics */}
+          <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 sm:p-6 space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/60 bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-50">
+                <BarChart3 className="h-3.5 w-3.5" />
+                Healthcare analytics
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/80 px-3 py-1 text-[11px] font-medium text-slate-300">
+                Python · scikit-learn
+              </span>
+            </div>
+
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-50">
+              Machine Learning for Healthcare Analytics
+            </h3>
+
+            <p className="text-xs text-slate-400">
+              University of Wisconsin–La Crosse · May 2024 – Present
+            </p>
+
+            <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Conducting independent research on machine learning
+                applications for healthcare cost prediction and disease
+                classification.
+              </li>
+              <li>
+                • Developed predictive models achieving{" "}
+                <span className="text-slate-100">
+                  92% accuracy for healthcare insurance cost estimation
+                </span>{" "}
+                and{" "}
+                <span className="text-slate-100">
+                  87% accuracy for chronic kidney disease classification
+                </span>{" "}
+                using regression and classification techniques.
+              </li>
+              <li>
+                • Implementing and comparing multiple ML algorithms (Random
+                Forest, Gradient Boosting, K-Nearest Neighbors, Naive Bayes)
+                with rigorous hyperparameter optimization and cross-validation.
+              </li>
+            </ul>
+          </Reveal>
         </div>
       </section>
     </div>

@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 
-// Pages (use your existing files; Home is guaranteed below)
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Research from "./pages/Research.jsx";
@@ -14,11 +13,12 @@ import Contact from "./pages/Contact.jsx";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className="min-h-screen bg-slate-950 text-slate-100">
+        {/* subtle background gradients */}
+        <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(244,63,94,0.18),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(56,189,248,0.16),_transparent_55%)]" />
         <Header />
-        {/* Header is h-16 -> give main exactly pt-16 to clear it */}
-        <main className="pt-16">
+        <main className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -29,7 +29,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
