@@ -167,11 +167,11 @@ export default function Home() {
             Short talk · AI & safety
           </p>
           <p className="text-sm text-slate-200 mt-1.5">
-            Recognition for a 3-minute presentation on an{" "}
+            For presenting{" "}
             <span className="text-rose-200 font-medium">
               Operationalizing WHO Ethical Priniciples for AI in Healthcare -  A Governance-By-Design Lifecycle Framework
             </span>{" "}
-            at the IEEE Innovators Summit hosted at UW–La Crosse.
+            at the IEEE 2025 Innovators Summit hosted at UW–La Crosse.
           </p>
         </article>
 
@@ -181,7 +181,7 @@ export default function Home() {
             1st Place – 3-Minute Graduate Project Competition (2025)
           </h3>
           <p className="text-xs text-slate-400 uppercase tracking-[0.18em]">
-            Impact 
+            Impact · Communication
           </p>
           <p className="text-sm text-slate-200 mt-1.5">
             University of Wisconsin–La Crosse competition highlighting project titled AI powered Animal-Vehicle Collision Prevention System
@@ -194,7 +194,7 @@ export default function Home() {
             Featured Student – UWL News & M.S. Software Engineering Program (2025)
           </h3>
           <p className="text-xs text-slate-400 uppercase tracking-[0.18em]">
-            Public recognition · Student profile
+            Student profile
           </p>
           <p className="text-sm text-slate-200 mt-1.5">
             Profiled in{" "}
