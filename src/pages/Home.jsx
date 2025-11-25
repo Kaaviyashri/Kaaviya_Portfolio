@@ -91,88 +91,114 @@ export default function Home() {
       </section>
 
 
-      {/* ACHIEVEMENTS / HIGHLIGHTS */}
-    {/* ACHIEVEMENTS / HIGHLIGHTS */}
-<section className="space-y-6 pb-4 sm:pb-6">
-  <Reveal className="flex items-center gap-2">
-    <Award className="h-5 w-5 text-rose-400" />
-    <div>
-      <h2 className="text-xl font-semibold text-slate-50">
-        Selected awards, scholarships, and academic honors
-      </h2>
-      <p className="text-xs text-slate-400 mt-1">
-        A snapshot of recent recognition for research, innovation, engagement, and academic performance.
-      </p>
-    </div>
+     {/* SELECTED AWARDS – RICH VERTICAL LAYOUT */}
+<section className="space-y-6">
+  <Reveal className="space-y-3">
+    <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-3 py-1 text-[11px] font-medium text-slate-300">
+      Selected awards, scholarships & academic honors
+    </span>
+
+    <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+      A snapshot of recent recognition in research, innovation, engagement, and academics
+    </h2>
   </Reveal>
 
-  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {/* Research & innovation awards */}
-    <Reveal className="relative rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-[0_18px_60px_rgba(0,0,0,0.85)] text-sm text-slate-200">
-      <div className="absolute inset-x-0 -top-px h-0.5 bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-400 rounded-t-2xl" />
-      <div className="inline-flex items-center gap-2 rounded-full bg-rose-500/10 border border-rose-400/60 px-3 py-1 text-[11px] font-semibold text-rose-50 mb-3">
-        Research &amp; innovation
+  <div className="mt-4 space-y-8">
+    {/* RESEARCH & INNOVATION GROUP */}
+    <Reveal className="space-y-4">
+      <div className="inline-flex items-center gap-2 rounded-full border border-rose-500/50 bg-rose-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-rose-100">
+        Research & innovation
       </div>
 
-      <div className="space-y-2.5">
-        <div className="rounded-xl bg-slate-900/80 border border-rose-500/70 px-3 py-2">
-          <p className="text-sm font-semibold text-rose-100">
-            1st Place – WiSys Innovation On-Ramp (2025)
-          </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            For presenting{" "}
-            <em>ARISTOTLE: Ethical Readiness Assessment Tool for Healthcare AI Systems</em>.
-          </p>
-        </div>
+      <div className="space-y-4">
+        {/* WiSys 1st Place */}
+        <article className="relative overflow-hidden rounded-2xl border border-rose-500/40 bg-gradient-to-r from-slate-950/95 via-slate-950/90 to-slate-950/95 p-4 sm:p-5">
+          <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-rose-400 via-amber-300 to-emerald-300" />
+          <div className="pl-4 sm:pl-5 space-y-1.5">
+            <h3 className="text-base sm:text-lg font-semibold text-slate-50">
+              1st Place – WiSys Innovation On-Ramp (2025)
+            </h3>
+            <p className="text-xs text-slate-400 uppercase tracking-[0.18em]">
+              Innovation · Applied AI · Healthcare ethics
+            </p>
+            <p className="text-sm text-slate-200">
+              For presenting{" "}
+              <span className="text-rose-200 font-medium">
+                ARISTOTLE: Ethical Readiness Assessment Tool for Healthcare AI Systems
+              </span>
+              . Event hosted by{" "}
+              <a
+                href="https://www.wisys.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rose-200 underline decoration-slate-500/60 underline-offset-2 hover:text-rose-100"
+              >
+                WiSys
+              </a>
+              .
+            </p>
+          </div>
+        </article>
 
-        <div className="rounded-xl bg-slate-900/70 border border-rose-400/50 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-100">
-            Innovative Thinking Badge – WiSys
+        {/* WiSys Innovative Thinking Badge */}
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
+            Innovative Thinking Badge – WiSys (2025)
+          </h3>
+          <p className="text-xs text-slate-400 uppercase tracking-[0.18em]">
+            Creativity · Problem framing
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            Awarded at the{" "}
-            <a
-              href="https://www.wisys.org"
-              target="_blank"
-              rel="noreferrer"
-              className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
-            >
-              WiSys Innovation On-Ramp
-            </a>{" "}
-            (Fall 2025).
+          <p className="text-sm text-slate-200 mt-1.5">
+            Awarded at the WiSys Innovation On-Ramp for ideation, problem-framing,
+            and applied innovation in AI-driven tools.
           </p>
-        </div>
+        </article>
 
-        <div className="rounded-xl bg-slate-900/70 border border-rose-400/40 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-100">
-            IEEE Innovators Summit – Appreciation Prize
+        {/* IEEE Innovators Summit */}
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
+            IEEE Innovators Summit – Appreciation Prize (2025)
+          </h3>
+          <p className="text-xs text-slate-400 uppercase tracking-[0.18em]">
+            Short talk · AI & safety
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            For a 3-minute presentation on an AI-powered animal–vehicle collision
-            prevention system at the{" "}
-            <a
-              href="https://www.ieee.org"
-              target="_blank"
-              rel="noreferrer"
-              className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
-            >
-              IEEE 2025 Innovators Summit
-            </a>{" "}
-            (UW–La Crosse).
+          <p className="text-sm text-slate-200 mt-1.5">
+            Recognition for a 3-minute presentation on an{" "}
+            <span className="text-rose-200 font-medium">
+              Operationalizing WHO Ethical Priniciples for AI in Healthcare -  A Governance-By-Design Lifecycle Framework
+            </span>{" "}
+            at the IEEE Innovators Summit hosted at UW–La Crosse.
           </p>
-        </div>
+        </article>
 
-        <div className="rounded-xl bg-slate-900/70 border border-rose-400/40 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-100">
-            Featured Student – UWL News &amp; Program Page
+        {/* 3-Minute Graduate Project Competition */}
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
+            1st Place – 3-Minute Graduate Project Competition (2025)
+          </h3>
+          <p className="text-xs text-slate-400 uppercase tracking-[0.18em]">
+            Impact 
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
+          <p className="text-sm text-slate-200 mt-1.5">
+            University of Wisconsin–La Crosse competition highlighting project titled AI powered Animal-Vehicle Collision Prevention System
+          </p>
+        </article>
+
+        {/* Featured student */}
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
+            Featured Student – UWL News & M.S. Software Engineering Program (2025)
+          </h3>
+          <p className="text-xs text-slate-400 uppercase tracking-[0.18em]">
+            Public recognition · Student profile
+          </p>
+          <p className="text-sm text-slate-200 mt-1.5">
             Profiled in{" "}
             <a
               href="https://www.uwlax.edu/news/posts/nature-inspired-innovation/"
               target="_blank"
-              rel="noreferrer"
-              className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
+              rel="noopener noreferrer"
+              className="text-rose-200 underline decoration-slate-500/60 underline-offset-2 hover:text-rose-100"
             >
               “Nature-Inspired Innovation”
             </a>{" "}
@@ -180,104 +206,88 @@ export default function Home() {
             <a
               href="https://www.uwlax.edu/academics/grad/software-engineering/"
               target="_blank"
-              rel="noreferrer"
-              className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
+              rel="noopener noreferrer"
+              className="text-rose-200 underline decoration-slate-500/60 underline-offset-2 hover:text-rose-100"
             >
               M.S. Software Engineering program page
             </a>{" "}
-            (2025).
+            for applied software and AI work.
           </p>
-        </div>
-
-        <div className="rounded-xl bg-slate-900/70 border border-rose-400/40 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-100">
-            1st Place – 3-Minute Graduate Project Competition
-          </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            University of Wisconsin–La Crosse (2025).
-          </p>
-        </div>
+        </article>
       </div>
     </Reveal>
 
-    {/* Scholarships & recognition */}
-    <Reveal className="relative rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-[0_18px_60px_rgba(0,0,0,0.85)] text-sm text-slate-200">
-      <div className="absolute inset-x-0 -top-px h-0.5 bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 rounded-t-2xl" />
-      <div className="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 border border-cyan-400/60 px-3 py-1 text-[11px] font-semibold text-cyan-50 mb-3">
-        Scholarships &amp; institutional recognition
+    {/* SCHOLARSHIPS & INSTITUTIONAL RECOGNITION */}
+    <Reveal className="space-y-4">
+      <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-100">
+        Scholarships & institutional recognition
       </div>
 
-      <div className="space-y-2.5">
-        <div className="rounded-xl bg-slate-900/80 border border-cyan-500/70 px-3 py-2">
-          <p className="text-sm font-semibold text-cyan-100">
+      <div className="space-y-4">
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
             I-Engage Scholarship – International Education Engagement
+          </h3>
+          <p className="text-xs text-slate-400">University of Wisconsin–La Crosse · Fall 2025</p>
+          <p className="text-sm text-slate-200 mt-1.5">
+            Scholarship recognizing meaningful international engagement, leadership,
+            and contribution to the global campus community.
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            <a
-              href="https://www.uwlax.edu/gel/graduate-education/current-students/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
-            >
-              University of Wisconsin–La Crosse
-            </a>
-            , Fall 2025.
-          </p>
-        </div>
+        </article>
 
-        <div className="rounded-xl bg-slate-900/70 border border-cyan-400/50 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-100">
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
             Merit-Based Tuition Grant
+          </h3>
+          <p className="text-xs text-slate-400">University of Wisconsin–La Crosse · 2024–2025</p>
+          <p className="text-sm text-slate-200 mt-1.5">
+            Awarded in recognition of strong academic performance and sustained progress
+            in graduate study.
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            <a
-              href="https://www.uwlax.edu"
-              target="_blank"
-              rel="noreferrer"
-              className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
-            >
-              University of Wisconsin–La Crosse
-            </a>{" "}
-            (2024–2025).
-          </p>
-        </div>
+        </article>
 
-        <div className="rounded-xl bg-slate-900/70 border border-cyan-400/40 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-100">
-            Chancellor’s Volunteer Service Award (Gold Level)
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
+            Chancellor’s Volunteer Service Award — Gold Level
+          </h3>
+          <p className="text-xs text-slate-400">University of Wisconsin–La Crosse · 2025</p>
+          <p className="text-sm text-slate-200 mt-1.5">
+            Highest-level institutional recognition for sustained volunteerism,
+            community engagement, and service contributions.
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            University of Wisconsin–La Crosse (2025).
-          </p>
-        </div>
+        </article>
       </div>
     </Reveal>
 
-    {/* Academic honors */}
-    <Reveal className="relative rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-[0_18px_60px_rgba(0,0,0,0.85)] text-sm text-slate-200">
-      <div className="absolute inset-x-0 -top-px h-0.5 bg-gradient-to-r from-emerald-400 via-lime-300 to-teal-400 rounded-t-2xl" />
-      <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-400/60 px-3 py-1 text-[11px] font-semibold text-emerald-50 mb-3">
+    {/* ACADEMIC HONORS */}
+    <Reveal className="space-y-4">
+      <div className="inline-flex items-center gap-2 rounded-full border border-sky-500/50 bg-sky-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-100">
         Academic honors
       </div>
 
-      <div className="space-y-2.5">
-        <div className="rounded-xl bg-slate-900/80 border border-emerald-500/70 px-3 py-2">
-          <p className="text-sm font-semibold text-emerald-100">
+      <div className="space-y-4">
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
             Certificate of Merit – Academic Distinction
+          </h3>
+          <p className="text-xs text-slate-400">Bharathidasan University · 2019</p>
+          <p className="text-sm text-slate-200 mt-1.5">
+            Awarded for high academic distinction during postgraduate study.
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            Bharathidasan University, 2019.
-          </p>
-        </div>
+        </article>
 
-        <div className="rounded-xl bg-slate-900/70 border border-emerald-400/50 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-100">
+        <article className="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-100">
             Certificate of Proficiency – Academic Performance
+          </h3>
+          <p className="text-xs text-slate-400">
+            A.V.V.M. Sri Pushpam College (Bharathidasan University) · 2018
           </p>
-          <p className="text-sm text-slate-300 mt-0.5">
-            A.V.V.M. Sri Pushpam College (Bharathidasan University), 2018.
+          <p className="text-sm text-slate-200 mt-1.5">
+            Recognition for strong academic performance during undergraduate study
+            in Computer Science.
           </p>
-        </div>
+        </article>
       </div>
     </Reveal>
   </div>
