@@ -60,7 +60,18 @@ export default function About() {
                 University of Wisconsin–La Crosse, USA
               </p>
               <p className="text-[11px] text-slate-500">
-                Aug 2024 – May 2026 (expected)
+                Aug 2024 – May 2026
+              </p>
+              <p className="text-[11px] text-slate-500">
+                MSE Capstone advisor:{" "}
+                <a
+                  href="https://www.uwlax.edu/profile/dmitra/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-rose-200 hover:text-rose-100 underline underline-offset-2"
+                >
+                  Dr. Dipankar Mitra
+                </a>
               </p>
             </div>
             <div className="space-y-1">
