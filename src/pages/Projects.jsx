@@ -373,7 +373,7 @@ export default function Projects() {
         </Reveal>
 
         {/* Project grid */}
-        <Reveal className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {filteredProjects.map((project) => (
             <article
               key={project.title}
@@ -435,7 +435,7 @@ export default function Projects() {
               </div>
             </article>
           ))}
-        </Reveal>
+        </div>
       </section>
 
       {/* Summary */}
