@@ -52,7 +52,7 @@ export default function Home() {
                 to="/research"
                 className="inline-flex items-center justify-center rounded-full border border-slate-600 bg-slate-900/80 px-4 py-2.5 text-sm font-medium text-slate-100 hover:border-rose-400 hover:text-rose-200 transition"
               >
-                Research & themes
+                Research Focus & Experience
               </Link>
             </div>
 
@@ -272,7 +272,7 @@ export default function Home() {
           </h3>
           <p className="text-xs text-slate-400">Bharathidasan University · 2019</p>
           <p className="text-sm text-slate-200 mt-1.5">
-            Awarded for high academic distinction during postgraduate study.
+            Awarded for high academic distinction in computer science.
           </p>
         </article>
 
