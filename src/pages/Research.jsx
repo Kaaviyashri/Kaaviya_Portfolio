@@ -33,14 +33,18 @@ export default function Research() {
               safety-critical applications
             </span>
             . I am particularly interested in predictive and diagnostic models
-            for chronic diseases such as cancer, trustworthy and interpretable AI systems, and
-            governance frameworks that ensure safe deployment in real clinical
-            environments.
+            for chronic diseases such as cancer, trustworthy and interpretable AI
+            systems, and governance frameworks that ensure safe deployment in
+            real clinical environments.
           </p>
 
           <p className="max-w-3xl text-sm sm:text-base text-slate-200/90">
-            Below is an overview of my current research projects and thematic
-            interests, as described in my Ph.D. application materials.
+            Below is an overview of my{" "}
+            <span className="text-rose-200">current and ongoing research projects</span>{" "}
+            and thematic interests.
+            Several of these projects are being developed into{" "}
+            <span className="text-rose-200">manuscripts in preparation</span> for
+            peer-reviewed submission.
           </p>
         </Reveal>
       </section>
@@ -194,8 +198,8 @@ export default function Research() {
                 compliance.
               </li>
               <li>
-                • Implementing an automated scoring system with
-                evidence-based recommendations for improving ethical readiness.
+                • Implementing an automated scoring system with evidence-based
+                recommendations for improving ethical readiness.
               </li>
             </ul>
           </Reveal>
@@ -287,6 +291,40 @@ export default function Research() {
             </ul>
           </Reveal>
         </div>
+      </section>
+
+      {/* Manuscripts in preparation */}
+      <section className="space-y-6 pb-4 sm:pb-8">
+        <Reveal className="flex items-center gap-2">
+          <FileText className="h-5 w-5 text-emerald-400" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+            Manuscripts in preparation
+          </h2>
+        </Reveal>
+
+        <Reveal className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 sm:p-6">
+          <ul className="space-y-1.5 text-xs sm:text-sm text-slate-300">
+            <li>
+              • Saraboji, K.{" "}
+              <span className="italic">
+                Operationalising WHO&apos;s Ethical AI Principles: A
+                Governance-by-Design Framework for Healthcare AI.
+              </span>
+            </li>
+            <li>
+              • Saraboji, K.{" "}
+              <span className="italic">
+                Machine Learning Models for Healthcare Cost Prediction and
+                Chronic Disease Classification.
+              </span>
+            </li>
+          </ul>
+          <p className="mt-3 text-xs sm:text-sm text-slate-400">
+            These manuscripts are based on my ongoing research projects
+            described above and are being prepared for submission to
+            peer-reviewed venues.
+          </p>
+        </Reveal>
       </section>
     </div>
   );
