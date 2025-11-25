@@ -65,14 +65,17 @@ export default function Home() {
           {/* Photo side */}
           <Reveal className="flex justify-center">
             <div className="relative w-fit">
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-rose-500/80 via-cyan-400/70 to-emerald-400/40 blur-xl opacity-60" />
-              <div className="relative rounded-3xl bg-slate-950/90 border border-slate-800/80 p-3">
+              {/* Smaller glow */}
+              <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-tr from-rose-500/80 via-cyan-400/70 to-emerald-400/40 blur-lg opacity-60" />
+              
+              {/* Slightly smaller outer box */}
+              <div className="relative rounded-3xl bg-slate-950/90 border border-slate-800/80 px-3 py-3 sm:px-3 sm:py-3">
                 <img
                   src={profile}
                   alt="Kaaviyashri Saraboji"
-                  className="h-64 w-64 sm:h-72 sm:w-72 rounded-2xl object-cover object-top shadow-[0_24px_70px_rgba(0,0,0,0.9)] mx-auto"
+                  className="h-52 w-52 sm:h-60 sm:w-60 rounded-2xl object-cover object-top shadow-[0_24px_70px_rgba(0,0,0,0.9)] mx-auto"
                 />
-                <div className="mt-3 space-y-1 text-xs text-slate-300 text-center">
+                <div className="mt-3 space-y-1 text-[11px] sm:text-xs text-slate-300 text-center max-w-[15rem] sm:max-w-xs mx-auto">
                   <p className="font-semibold">
                     Graduate student in Software Engineering
                   </p>
@@ -87,6 +90,7 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
+
         </div>
       </section>
 
