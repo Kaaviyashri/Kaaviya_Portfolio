@@ -80,15 +80,16 @@ export default function Contact() {
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             I welcome opportunities in{" "}
             <span className="text-rose-200 font-medium">
-              software engineering, full-stack development, AI/ML engineering,
-              data science, and applied research
+              AI software engineering, machine learning engineering, data science,
+              and applied ML, as well as full-stack roles where AI and data are central
             </span>
             . I am open to{" "}
             <span className="text-rose-200 font-medium">
-              full-time, part-time, on-site, and hybrid roles
+              full-time, part-time, on-site, hybrid, and remote roles
             </span>{" "}
-            that value careful engineering, collaboration, and impact.
+            that value careful engineering, collaboration, and real-world impact.
           </p>
+
 
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             I especially enjoy projects that connect technical depth with
