@@ -25,8 +25,8 @@ export default function Experience() {
           <p className="max-w-3xl text-sm sm:text-base text-slate-200/90">
             My experience spans{" "}
             <span className="text-rose-200">
-              software engineering, full-stack development, AI/ML projects,
-              digital banking technology, teaching, and student leadership
+              AI software engineering, machine learning, full-stack development,
+              digital banking analytics, teaching, and student leadership
             </span>
             . I enjoy working where technical depth, collaboration, and
             community impact come together.
@@ -35,47 +35,50 @@ export default function Experience() {
       </section>
 
       {/* TEACHING & MENTORING */}
-        <section className="space-y-6">
-          <Reveal className="flex items-center gap-2">
-            <GraduationCap className="h-5 w-5 text-rose-400" />
-            <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
-              Teaching & mentoring experience
-            </h2>
-          </Reveal>
+      <section className="space-y-6">
+        <Reveal className="flex items-center gap-2">
+          <GraduationCap className="h-5 w-5 text-rose-400" />
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+            Teaching & mentoring experience
+          </h2>
+        </Reveal>
 
-          <Reveal className="grid gap-6 md:grid-cols-1">
-            <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 space-y-3">
-              <div className="flex items-center gap-2 text-xs">
-                <span className="rounded-full border border-blue-400/50 bg-blue-500/10 px-3 py-1 text-blue-100 font-medium">
-                  Teaching & Lab Support
-                </span>
-              </div>
+        <Reveal className="grid gap-6 md:grid-cols-1">
+          <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 space-y-3">
+            <div className="flex items-center gap-2 text-xs">
+              <span className="rounded-full border border-blue-400/50 bg-blue-500/10 px-3 py-1 text-blue-100 font-medium">
+                Teaching & Lab Support
+              </span>
+            </div>
 
-              <h3 className="text-lg font-semibold text-slate-50">
-                Lab & Programming Assistant — Wings Technology Lab, University of Wisconsin–La Crosse
-              </h3>
-              <p className="text-xs text-slate-400">September 2024 – May 2025</p>
+            <h3 className="text-lg font-semibold text-slate-50">
+              Lab & Programming Assistant — Wings Technology Lab, University of Wisconsin–La Crosse
+            </h3>
+            <p className="text-xs text-slate-400">September 2024 – May 2025</p>
 
-              <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
-                <li>
-                  • Mentored 25+ students weekly in Python, data cleaning, exploratory data analysis (EDA), visualization, and introductory machine learning workflows.
-                </li>
-                <li>
-                  • Supported faculty and student research with data preprocessing, model evaluation, and statistical interpretation (accuracy, ROC-AUC, confusion matrices).
-                </li>
-                <li>
-                  • Assisted with debugging ML pipelines, optimizing Jupyter notebooks, and resolving environment and dependency issues across lab machines.
-                </li>
-                <li>
-                  • Helped automate grading scripts and data-driven assignments using Python, Pandas, and Jupyter Notebooks.
-                </li>
-              </ul>
-            </article>
-          </Reveal>
-        </section>
+            <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
+              <li>
+                • Mentored 25+ students weekly in Python, data cleaning, exploratory data analysis (EDA),
+                visualization, and introductory machine learning workflows.
+              </li>
+              <li>
+                • Supported faculty and student research with data preprocessing, model evaluation,
+                and statistical interpretation (accuracy, ROC-AUC, confusion matrices).
+              </li>
+              <li>
+                • Assisted with debugging ML pipelines, optimizing Jupyter notebooks, and resolving
+                environment and dependency issues across lab machines.
+              </li>
+              <li>
+                • Helped automate grading scripts and data-driven assignments using Python, Pandas,
+                and Jupyter Notebooks.
+              </li>
+            </ul>
+          </article>
+        </Reveal>
+      </section>
 
-
-            {/* PROFESSIONAL EXPERIENCE */}
+      {/* PROFESSIONAL EXPERIENCE */}
       <section className="space-y-6">
         <Reveal className="flex items-center gap-2">
           <Briefcase className="h-5 w-5 text-cyan-400" />
@@ -85,12 +88,12 @@ export default function Experience() {
         </Reveal>
 
         <div className="space-y-6">
-          {/* Habitat — Web Developer */}
+          {/* Habitat — AI Software Engineer (Volunteer) */}
           <Reveal>
             <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 space-y-3">
               <div className="flex items-center gap-2 text-xs">
                 <span className="rounded-full border border-emerald-400/50 bg-emerald-500/10 px-3 py-1 text-emerald-100 font-medium">
-                  Full-Stack Development · Nonprofit
+                  AI Software Engineering · Full-Stack · Nonprofit
                 </span>
                 <span className="rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-slate-300">
                   Volunteer Role
@@ -98,28 +101,33 @@ export default function Experience() {
               </div>
 
               <h3 className="text-lg font-semibold text-slate-50">
-                Web Developer (Volunteer) — Habitat for Humanity, La Crosse Region
+                AI Software Engineer (Volunteer) — Habitat for Humanity of the Greater La Crosse Region
               </h3>
               <p className="text-xs text-slate-400">September 2025 – Present</p>
 
               <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
                 <li>
-                  • Developed a full MERN-stack portal for homeownership applications with JWT authentication, OTP verification, secure sessions, and multi-role access (applicant, staff, admin).
+                  • Developed a full MERN-stack housing application portal with secure JWT authentication,
+                  OTP verification, hardened sessions, and multi-role access (applicant, staff, admin).
                 </li>
                 <li>
-                  • Built a 26-step multi-page application flow with autosave, dynamic validation, and clear status visibility for applicants and staff.
+                  • Built a 26-step multi-page application workflow with autosave, dynamic validation,
+                  and clear status visibility for applicants and staff.
                 </li>
                 <li>
-                  • Designed admin dashboard features including application status views, reviewer workflows, audit notes, and decision history tracking.
+                  • Designed admin analytics dashboards for application status, reviewer workflows,
+                  audit trails, and decision history tracking.
                 </li>
                 <li>
                   • Created modular, responsive, and accessible UI components following WCAG-aligned practices.
                 </li>
                 <li>
-                  • Designed an AI-driven chatbot assistant for applicant support using NLP-based intent classification and FAQ-style retrieval.
+                  • Built an NLP-powered chatbot with intent classification achieving ~85% accuracy on 200+ user
+                  queries, reducing applicant support tickets by ~40% and enabling 24/7 automated assistance.
                 </li>
                 <li>
-                  • Integrated chatbot with backend APIs and structured the system for future RAG expansion.
+                  • Improved backend reliability by implementing structured error handling, optimized MongoDB
+                  queries, and security middleware (Helmet, rate limiting), reducing failures across key endpoints.
                 </li>
               </ul>
             </article>
@@ -141,19 +149,24 @@ export default function Experience() {
 
               <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
                 <li>
-                  • Built interactive data visualization dashboards using React, Chart.js, and REST APIs to display performance metrics and user behavior.
+                  • Built interactive data visualization dashboards using React, Chart.js, and REST APIs
+                  to display performance metrics and user behavior.
                 </li>
                 <li>
-                  • Transformed raw API data into meaningful charts enabling analytics-driven insights for client engagement tracking.
+                  • Transformed raw API data into meaningful charts, enabling analytics-driven insights
+                  for client engagement tracking.
                 </li>
                 <li>
-                  • Improved dashboard load time by ~25% through optimized API calls, caching strategies, and efficient state management.
+                  • Improved dashboard load time by ~25% through optimized API calls, caching strategies,
+                  and efficient state management.
                 </li>
                 <li>
-                  • Collaborated with backend engineers to shape API response structures for analytics and reporting use cases.
+                  • Built dashboards surfacing critical KPIs that informed product roadmap decisions
+                  for a 10K+ user base.
                 </li>
                 <li>
-                  • Participated in Agile sprint planning, standups, and collaborative Git workflows.
+                  • Collaborated with backend engineers to shape API response structures for analytics
+                  and reporting use cases, and participated in Agile sprint planning and Git-based workflows.
                 </li>
               </ul>
             </article>
@@ -175,22 +188,28 @@ export default function Experience() {
 
               <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
                 <li>
-                  • Analyzed 50,000+ daily financial transactions using SQL and Python to detect anomalies, customer behavior patterns, and risk indicators.
+                  • Built an anomaly detection pipeline processing 50K+ daily transactions, improving
+                  fraud signal quality and reducing manual review needs by ~30%.
                 </li>
                 <li>
-                  • Built automated ETL workflows that improved reporting accuracy and reduced manual reporting by ~40%.
+                  • Built automated ETL pipelines that improved reporting accuracy and reduced manual
+                  reporting effort by ~40%.
                 </li>
                 <li>
-                  • Developed BI dashboards (Power BI/Tableau) to visualize digital channel KPIs, improving data-driven decisions.
+                  • Developed BI dashboards (Power BI/Tableau) to visualize digital channel KPIs,
+                  improving data-driven decision-making for leadership.
                 </li>
                 <li>
-                  • Collaborated with data engineering teams to design early fraud-detection logic using transactional features (amount, merchant type, time window).
+                  • Collaborated with data engineering teams to design early fraud-detection logic
+                  using features such as transaction amount, merchant category, and time window.
                 </li>
                 <li>
-                  • Built regression- and time-series-based forecasting models to support branch performance and product adoption planning.
+                  • Built regression- and time-series-based forecasting models to support branch
+                  performance and product adoption planning.
                 </li>
                 <li>
-                  • Improved data quality pipelines and identified governance gaps across digital banking systems.
+                  • Improved data quality pipelines and identified governance gaps across digital
+                  banking systems.
                 </li>
               </ul>
             </article>
