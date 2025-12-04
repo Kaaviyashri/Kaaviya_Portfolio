@@ -35,50 +35,47 @@ export default function Experience() {
       </section>
 
       {/* TEACHING & MENTORING */}
-      <section className="space-y-6">
-        <Reveal className="flex items-center gap-2">
-          <GraduationCap className="h-5 w-5 text-rose-400" />
-          <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
-            Teaching & mentoring experience
-          </h2>
-        </Reveal>
+        <section className="space-y-6">
+          <Reveal className="flex items-center gap-2">
+            <GraduationCap className="h-5 w-5 text-rose-400" />
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-50">
+              Teaching & mentoring experience
+            </h2>
+          </Reveal>
 
-        <Reveal className="grid gap-6 md:grid-cols-1">
-          <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 space-y-3">
-            <div className="flex items-center gap-2 text-xs">
-              <span className="rounded-full border border-blue-400/50 bg-blue-500/10 px-3 py-1 text-blue-100 font-medium">
-                Teaching & Lab Support
-              </span>
-            </div>
+          <Reveal className="grid gap-6 md:grid-cols-1">
+            <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 space-y-3">
+              <div className="flex items-center gap-2 text-xs">
+                <span className="rounded-full border border-blue-400/50 bg-blue-500/10 px-3 py-1 text-blue-100 font-medium">
+                  Teaching & Lab Support
+                </span>
+              </div>
 
-            <h3 className="text-lg font-semibold text-slate-50">
-              Lab Assistant — Wings Technology Lab, University of Wisconsin–La Crosse
-            </h3>
-            <p className="text-xs text-slate-400">September 2024 – May 2025</p>
+              <h3 className="text-lg font-semibold text-slate-50">
+                Lab & Programming Assistant — Wings Technology Lab, University of Wisconsin–La Crosse
+              </h3>
+              <p className="text-xs text-slate-400">September 2024 – May 2025</p>
 
-            <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
-              <li>
-                • Assisted undergraduate and graduate students with programming questions
-                in Python, C, and React, emphasizing problem-solving and debugging strategies.
-              </li>
-              <li>
-                • Clarified concepts in data structures, algorithms, and software engineering,
-                helping students translate theory into working code.
-              </li>
-              <li>
-                • Diagnosed build, environment, and dependency issues on lab machines to keep
-                course projects running smoothly.
-              </li>
-              <li>
-                • Encouraged good practices such as version control, readable code, and
-                incremental testing.
-              </li>
-            </ul>
-          </article>
-        </Reveal>
-      </section>
+              <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
+                <li>
+                  • Mentored 25+ students weekly in Python, data cleaning, exploratory data analysis (EDA), visualization, and introductory machine learning workflows.
+                </li>
+                <li>
+                  • Supported faculty and student research with data preprocessing, model evaluation, and statistical interpretation (accuracy, ROC-AUC, confusion matrices).
+                </li>
+                <li>
+                  • Assisted with debugging ML pipelines, optimizing Jupyter notebooks, and resolving environment and dependency issues across lab machines.
+                </li>
+                <li>
+                  • Helped automate grading scripts and data-driven assignments using Python, Pandas, and Jupyter Notebooks.
+                </li>
+              </ul>
+            </article>
+          </Reveal>
+        </section>
 
-      {/* PROFESSIONAL EXPERIENCE */}
+
+            {/* PROFESSIONAL EXPERIENCE */}
       <section className="space-y-6">
         <Reveal className="flex items-center gap-2">
           <Briefcase className="h-5 w-5 text-cyan-400" />
@@ -107,20 +104,22 @@ export default function Experience() {
 
               <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
                 <li>
-                  • Leading development of a MERN-based portal that streamlines housing
-                  applications and volunteer management for a regional Habitat affiliate.
+                  • Developed a full MERN-stack portal for homeownership applications with JWT authentication, OTP verification, secure sessions, and multi-role access (applicant, staff, admin).
                 </li>
                 <li>
-                  • Implementing secure authentication (JWT, OTP/reset), role-based access
-                  control, and protected admin workflows for application review.
+                  • Built a 26-step multi-page application flow with autosave, dynamic validation, and clear status visibility for applicants and staff.
                 </li>
                 <li>
-                  • Designing multi-step application flows with autosave, document uploads,
-                  and clear status visibility for applicants and staff.
+                  • Designed admin dashboard features including application status views, reviewer workflows, audit notes, and decision history tracking.
                 </li>
                 <li>
-                  • Collaborating with nonprofit stakeholders to refine requirements,
-                  prioritize features, and align the system with real operational constraints.
+                  • Created modular, responsive, and accessible UI components following WCAG-aligned practices.
+                </li>
+                <li>
+                  • Designed an AI-driven chatbot assistant for applicant support using NLP-based intent classification and FAQ-style retrieval.
+                </li>
+                <li>
+                  • Integrated chatbot with backend APIs and structured the system for future RAG expansion.
                 </li>
               </ul>
             </article>
@@ -131,31 +130,30 @@ export default function Experience() {
             <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 space-y-3">
               <div className="flex items-center gap-2 text-xs">
                 <span className="rounded-full border border-rose-400/50 bg-rose-500/10 px-3 py-1 text-rose-100 font-medium">
-                  Frontend Development · React
+                  Frontend Development · Data Visualization
                 </span>
               </div>
 
-            <h3 className="text-lg font-semibold text-slate-50">
+              <h3 className="text-lg font-semibold text-slate-50">
                 Frontend Developer Intern — 7Angle, Chennai, India
               </h3>
               <p className="text-xs text-slate-400">April 2024 – July 2024</p>
 
               <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
                 <li>
-                  • Developed responsive React.js interfaces using modern UI patterns,
-                  improving page load and interaction performance (~25% faster in lab tests).
+                  • Built interactive data visualization dashboards using React, Chart.js, and REST APIs to display performance metrics and user behavior.
                 </li>
                 <li>
-                  • Integrated REST APIs for data retrieval and state management, ensuring
-                  smooth frontend–backend communication and robust error handling.
+                  • Transformed raw API data into meaningful charts enabling analytics-driven insights for client engagement tracking.
                 </li>
                 <li>
-                  • Participated in Agile sprint planning, daily stand-ups, and code reviews,
-                  practicing collaborative Git-based workflows.
+                  • Improved dashboard load time by ~25% through optimized API calls, caching strategies, and efficient state management.
                 </li>
                 <li>
-                  • Contributed to reusable components and layout patterns to keep
-                  codebases maintainable and consistent.
+                  • Collaborated with backend engineers to shape API response structures for analytics and reporting use cases.
+                </li>
+                <li>
+                  • Participated in Agile sprint planning, standups, and collaborative Git workflows.
                 </li>
               </ul>
             </article>
@@ -171,26 +169,28 @@ export default function Experience() {
               </div>
 
               <h3 className="text-lg font-semibold text-slate-50">
-                Deputy Manager — Digital Banking Technology, ICICI Bank, India
+                Deputy Manager — Data Analytics & Digital Systems, ICICI Bank, India
               </h3>
               <p className="text-xs text-slate-400">July 2020 – January 2024</p>
 
               <ul className="mt-2 space-y-1.5 text-xs sm:text-sm text-slate-300">
                 <li>
-                  • Analyzed 50,000+ daily transactions using SQL and Power BI to identify
-                  usage patterns, performance issues, and automation opportunities.
+                  • Analyzed 50,000+ daily financial transactions using SQL and Python to detect anomalies, customer behavior patterns, and risk indicators.
                 </li>
                 <li>
-                  • Designed and maintained dashboards that reduced manual reporting
-                  workload by ~40% and provided real-time visibility into key digital channels.
+                  • Built automated ETL workflows that improved reporting accuracy and reduced manual reporting by ~40%.
                 </li>
                 <li>
-                  • Supported implementation and testing of digital banking features,
-                  including mobile banking and biometric authentication services.
+                  • Developed BI dashboards (Power BI/Tableau) to visualize digital channel KPIs, improving data-driven decisions.
                 </li>
                 <li>
-                  • Collaborated with cross-functional teams (IT, operations, business)
-                  to translate domain requirements into testable, data-informed solutions.
+                  • Collaborated with data engineering teams to design early fraud-detection logic using transactional features (amount, merchant type, time window).
+                </li>
+                <li>
+                  • Built regression- and time-series-based forecasting models to support branch performance and product adoption planning.
+                </li>
+                <li>
+                  • Improved data quality pipelines and identified governance gaps across digital banking systems.
                 </li>
               </ul>
             </article>
